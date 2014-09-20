@@ -1,0 +1,7 @@
+<?
+
+class PaginePeer extends AbstractPeer
+{
+}
+
+?>

@@ -1,0 +1,1 @@
+UPDATE tab_immagini SET folder='/contenuti/' where folder is null;

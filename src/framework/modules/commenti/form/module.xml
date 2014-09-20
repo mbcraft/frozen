@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Form per commenti.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione base, nessun parametro, semplice invio di mail con protezione base dai bot.
+        </version>
+    </version-history>
+
+    <config-params>
+        <param name="EMAIL_COMMENT_RECEIVED" type="email" required="true">Mail a cui inviare i commenti ricevuti dalla form dei commenti</param>
+    </config-params>
+
+    <available-blocks>
+        <block name="commenti/form/simple">
+            <description>Questo blocco visualizza la form per inviare mail a chi gestisce il sito.</description>
+            <param name="subject" required="true" type="string" >Rappresenta l'argomento della mail</param>
+            <param name="num_rows" required="false" type="int" >Rappresenta il numero di righe del campo testuale.</param>
+            <param name="num_cols" required="false" type="int">Rappresenta il numero di colonne dei campi della form.</param>
+
+            <param name="spaces_after_nome" required="false" type="int">Rappresenta il numero di spazi (br) tra nome ed email.</param>
+            <param name="spaces_after_email" required="false" type="int">Rappresenta il numero di spazi (br) tra email e testo.</param>
+
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+            <add relative_path="include/" />
+            <add relative_path="blocks/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+            <remove relative_path="include/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+</module-declaration>

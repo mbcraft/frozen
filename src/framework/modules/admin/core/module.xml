@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="2" rev="4">
+    <description>Parte per l'abilitazione dei pannelli di amministrazione per il sito.</description>
+    <version-history>
+        <version major="1" minor="2" rev="4">
+            Sistemati css admin su explorer.
+        </version>
+        <version major="1" minor="2" rev="3">
+            Aggiunta di supporto a jquery.
+        </version>
+        <version major="1" minor="2" rev="2">
+            Vari fix messaggi e layout, e funzione admin_page.
+        </version>
+        <version major="1" minor="2" rev="0">
+            Gestione dei pannelli di sinistra tramite utilizzo di plugin.
+        </version>
+        <version major="1" minor="1" rev="1">
+            Modulo che consente di avere il pannello di amministrazione nei siti.
+        </version>
+    </version-history>
+
+    <customization-files>
+        <customization-file path="include/messages/admin/admin_sessione_scaduta.php.inc" required="true" sample="true" />
+        <customization-file path="include/messages/admin/admin_welcome.php.inc" required="true" sample="true" />
+        <customization-file path="include/messages/admin/admin_welcome_logged.php.inc" required="true" sample="true" />
+        <customization-file path="immagini/grafica/admin/logo_azienda.png" required="true" sample="true" />
+    </customization-files>
+
+    <available-blocks>
+        <block name="admin/admin_panel_table">
+            <description>Pannello utilizzabile nelle aree di admin.</description>
+            <param name="titolo" type="string" required="true">Titolo da utilizzare per il pannello.</param>
+            <param name="contenuto" type="text" required="false">Contenuto opzionale da inserire nel pannello, al centro.</param>
+            <param name="menu" type="array" required="false">Menu opzionale da inserire dopo il contenuto, al centro.</param>
+        </block>
+        <block name="admin/login_form">
+            <description>Form utilizzabile per la login nell'amministrazione.</description>
+        </block>
+        <block name="admin/show_logged_user">
+            <description>Pannello che visualizza l'utente loggato e il pulsante di logout.</description>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <add relative_path="contenuti/" />
+            <add relative_path="immagini/" />
+            <add relative_path="include/" />
+            <add relative_path="lib/" />
+            <add relative_path="css/" />
+            
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <remove relative_path="contenuti/" />
+            <remove relative_path="immagini/" />
+            <remove relative_path="include/" />
+            <remove relative_path="lib/" />
+            <remove relative_path="css/" />
+        </action>    
+    </actions>
+
+
+</module-declaration>

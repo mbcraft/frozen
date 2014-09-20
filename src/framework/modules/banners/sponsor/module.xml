@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Modulo per la gestione degli sponsor.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <required-modules>
+        <module name="contenuti/cold" major="1" minor="4" />
+    </required-modules>
+
+    <actions>
+        <action name="install">
+            
+            <create_or_update_table_fields table_name="tab_banner_groups" >
+                <autoincrement_id name="id_banner_group" />
+                <text_128 name="name" />
+            </create_or_update_table_fields>
+            
+            <create_or_update_table_fields table_name="tab_banner" >
+                <autoincrement_id name="id_banner" />
+                <external_id name="id_banner_group" />
+                <external_id name="id_immagine" />
+                <text_512 name="url" />
+            </create_or_update_table_fields>
+            
+            <create_or_update_do name="BannerGroup" table_name="tab_banner_groups" location="/lib/banner/db" />
+            <create_or_update_do name="Banner" table_name="tab_banner" location="/lib/banner/db" />          
+            
+            <add relative_path="blocks/" />
+            <add relative_path="include/" />
+            <add relative_path="contenuti/" />
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <drop_table table_name="tab_banner_groups" />
+            <drop_table table_name="tab_banner" />
+            
+            <drop_do name="BannerGroup" location="/lib/banner/db" />
+            <drop_do name="Banner" location="/lib/banner/db" />
+            
+            <remove relative_path="blocks/" />
+            <remove relative_path="include/" />
+            <remove relative_path="contenuti/" />
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

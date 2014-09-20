@@ -1,0 +1,244 @@
+#
+#  Dichiarazione sintassi per i moduli del framework
+#
+element module-declaration
+{
+    attribute major { xsd:integer },
+    attribute minor { xsd:integer },
+    attribute rev   { xsd:integer },
+    attribute show  { "true" | "false" }?,
+    (
+#
+#   Elenco delle versioni
+#
+    element version-history
+    {
+        element version
+        {
+            text,
+            attribute major { xsd:integer },
+            attribute minor { xsd:integer },
+            attribute rev   { xsd:integer }
+        }*
+    } &
+#
+#  Descrizione
+#
+    element description
+    { 
+        text 
+    }? & 
+    element config-params
+    {
+        element param
+        {
+            text,
+            attribute name { text },
+            attribute type { text },
+            attribute required { "true" | "false" }
+        }+
+    }? &
+    element customization-files
+    {
+        element customization-file
+        {
+            attribute path { text },
+            attribute required { "true" | "false" },
+            attribute sample { "true" | "false" }?
+            #
+            # Sample should be in samples/*path* eg.
+            #
+            # path = include/messages/hello.php.inc
+            # sample = true
+            #
+            # sample path -> samples/include/messages/hello.php.inc
+            #
+        }+
+    }? & 
+    element available-blocks
+    {
+        element block 
+        {
+            attribute name { text },
+            (element description { text } &
+            element param 
+            { 
+                text,
+                attribute name { text },
+                attribute type { text },
+                attribute required { "true" | "false" }?
+            }* )
+        }+
+    }? & 
+    element plugin-dirs
+    {
+        element plugin-dir
+        {
+            attribute path { text },
+            element description { text }?
+        }+
+    }? &
+    element required-modules
+    {
+        element module 
+        { 
+            attribute name { text },
+            attribute major { xsd:integer }?,
+            attribute minor { xsd:integer }?,
+            attribute rev { xsd:integer }?
+        }+
+    }? & 
+    element required-services
+    {
+        element service 
+        { 
+            attribute name { text },
+            attribute major { xsd:integer }?,
+            attribute minor { xsd:integer }?,
+            attribute rev { xsd:integer }? 
+        }+
+    }? &
+    element provided-services
+    {
+        element service 
+        { 
+            attribute name { text },
+            attribute major { xsd:integer }?,
+            attribute minor { xsd:integer }?,
+            attribute rev { xsd:integer }? 
+        }+
+    }? &
+    element actions
+    {
+        element action
+        {
+            attribute name { text },
+            (
+                element add
+                {
+                    attribute relative_path { text }
+                }* &
+                element remove
+                {
+                    attribute relative_path { text },
+                    attribute force { "true" | "false" }?
+                }* &
+                element mkdir
+                {
+                    attribute relative_path { text }
+                }* &
+                element rmdir
+                {
+                    attribute relative_path { text },
+                    attribute force { "true" | "false" }?
+                }* &
+                element extract
+                {
+                    attribute relative_archive_path { text },
+                    attribute extract_to { text }
+                 }* &
+                element script
+                {
+                    attribute name { text }
+                }* &
+                element sql
+                {
+                    attribute name { text }
+                }* &
+                element create_or_update_table_fields
+                {
+                    attribute table_name { text },
+                    (
+                        element key { attribute after_col_or_first { text }? }? &
+                        element external_id { attribute name { text },attribute refers_to { text }?,attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }? }* &
+                        element autoincrement_id { attribute name { text },attribute rename_from { text }?,attribute comment { text }? }? &
+                        element unique { attribute name { text } }* &
+                        element index { attribute name { text } }* &
+                        element fulltext { attribute name { text } }* &
+                        element text_16  { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_32  { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_64 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_128 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_512 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_1024 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_65k { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element text_big { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element unsigned_int_8 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element unsigned_int_32 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element signed_int_8 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element signed_int_32 { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element bool { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element date { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element time { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element datetime { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element timestamp { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element double { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }* &
+                        element numeric { attribute name { text },attribute null { "true" | "false" },attribute rename_from { text }?,attribute comment { text }?,attribute after_col_or_first { text }? }*
+                    )
+                }* &
+                element drop_table
+                {
+                    attribute table_name { text }
+                }* &
+                element create_or_update_view_fields
+                {
+                    attribute view_name { text },
+                    (
+                        element join
+                        {
+                            attribute from_table { text },
+                            attribute from_field { text },
+                            attribute to_table { text },
+                            attribute to_field { text }?
+                        }* &
+                        element import_fields
+                        {
+                            attribute table_name { text },
+                            (
+                            element field { attribute name { text },attribute from { text }? }+
+                            )
+                        }*
+                    )
+                }* &
+                element drop_view
+                {
+                    attribute view_name { text }
+                }* &
+
+                element rename_table
+                {
+                    attribute from { text },
+                    attribute to { text }
+                }* &
+                element drop_table_fields
+                {
+                    attribute table_name { text },
+                    element field { attribute name { text } }+
+                }* &
+                element insert_row
+                {
+                    attribute to { text },
+                    element field { text,attribute name { text } }*
+                }* &
+                element delete_row
+                {
+                    attribute from { text },
+                    attribute id { text }
+                }* &
+                element create_or_update_do
+                {
+                    attribute name { text },
+                    attribute table_name { text },
+                    attribute location { text }
+                }* &
+                element drop_do
+                {
+                    attribute name { text },
+                    attribute location { text }
+                }*
+            )
+        }*
+    }? )
+    
+
+}

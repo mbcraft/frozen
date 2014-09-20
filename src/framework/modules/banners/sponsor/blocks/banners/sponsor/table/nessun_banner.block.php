@@ -1,0 +1,1 @@
+<center><h2>Non sono presenti banner.</h2></center>

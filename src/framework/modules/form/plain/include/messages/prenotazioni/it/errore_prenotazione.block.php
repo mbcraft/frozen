@@ -1,0 +1,1 @@
+Siamo spiacenti, si &egrave; verificato un errore durante l'invio della prenotazione.

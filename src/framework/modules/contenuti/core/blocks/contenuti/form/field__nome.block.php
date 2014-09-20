@@ -1,0 +1,1 @@
+<label for="input_titolo">Titolo : </label><input id="input_nome" type="text" name="nome" value="<?= isset($nome) ? $nome : "" ?>" /><br />

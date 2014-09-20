@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="2" xmlns="http://www.frostlab.it/schemas/2011/module.xsd">
+    <description>Libreria per l'interfacciamento con facebook</description>
+    <version-history>
+        <version major="1" minor="0" rev="2">
+            Fix after redirect da fb.
+        </version>
+        <version major="1" minor="0" rev="1">
+            Aggiunta di plugin per gestione azione after login.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base.
+        </version>
+    </version-history>
+
+    <customization-files>
+        <customization-file path="include/plugins/api/facebook/after_login.php.inc" required="true" sample="samples/" />
+    </customization-files>
+
+    <config-params>
+        <param name="FACEBOOK_APP_ID" type="string" required="true">L'id fornito da facebook</param>
+        <param name="FACEBOOK_APP_SECRET" type="string" required="true">L'app secret fornito da fb</param>
+        <param name="FACEBOOK_REQUIRED_PERMISSIONS" type="string" required="true">I permessi richiesti dall'applicazione</param>
+        <param name="FACEBOOK_REDIRECT_URI" type="string" required="true">L'url di redirect utilizzato dopo </param>
+    </config-params>
+
+    <action name="install">
+        <add relative_path="lib/" />
+
+        <create_or_update_table_fields table_name="tab_accounts">
+            <text_64 name="facebook_username" null="true" />
+            <bool name="linked_with_facebook" null="true" />
+        </create_or_update_table_fields>
+
+    </action>
+    <action name="uninstall">
+        <remove relative_path="lib/" />
+    </action>
+
+</module-declaration>

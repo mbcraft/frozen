@@ -1,0 +1,8 @@
+<?
+
+class FolderAttribsPeer extends AbstractPeer
+{
+    
+}
+
+?>

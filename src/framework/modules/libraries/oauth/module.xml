@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0" show="false"> 
+    <description>Libreria per l'autenticazione tramite api OAuth.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione librerie utilizzate : rev 1267.
+            Fonte : http://oauth.googlecode.com/svn/code/php/
+        </version>
+    </version-history>
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

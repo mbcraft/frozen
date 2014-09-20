@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Modulo per singolo amministratore del sito
+        </version>
+    </version-history>
+
+    <config-params>
+        <param name="ADMIN_USERNAME" type="string" required="true" />
+        <param name="ADMIN_PASSWORD" type="string" required="true"/>
+    </config-params>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+    <required-modules>
+        <module name="admin/core" />
+    </required-modules>
+
+</module-declaration>

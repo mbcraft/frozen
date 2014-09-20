@@ -1,0 +1,5 @@
+<?
+
+Config::instance()->GESTIONE_CONTENUTI__IMAGE_LIMIT = 10;
+Config::instance()->GESTIONE_CONTENUTI__DOCUMENT_LIMIT = 10;
+?>

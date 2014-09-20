@@ -1,0 +1,1 @@
+<label for="textarea_descrizione">Descrizione : </label><textarea id="textarea_descrizione" type="text" name="descrizione"><?= isset($descrizione) ? $descrizione : "" ?></textarea><br />

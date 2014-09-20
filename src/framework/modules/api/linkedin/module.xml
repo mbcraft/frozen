@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0" show="false">
+    <description>Libreria per l'interfacciamento con linkedin</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione api utilizzate : 3.3.0
+        </version>
+    </version-history>
+
+    <config-params>
+        <param name="LINKEDIN_APP_KEY" type="string" required="true">App key dell'applicazione.</param>
+        <param name="LINKEDIN_APP_SECRET" type="string" required="true">App secret dell'applicazione.</param>
+        <param name="LINKEDIN_APP_CALLBACK_URL" type="string" required="true">Url di callback per la chiamata a linkedin.</param>
+    </config-params>
+
+    <required-modules>
+        <module name="libraries/oauth"/>
+    </required-modules>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

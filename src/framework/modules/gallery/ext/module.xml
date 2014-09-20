@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Implementazione gallery con pannello di admin.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione funzionante.
+            Features : Gestione a raccolte/gallery con nome e titolo immagini.
+            Gestione cache thumbnails ed eliminazione.
+        </version>
+    </version-history>
+
+    <config-params>
+        <param name="GALLERY_ADMIN__DISABLE_COLLECTION_ADMINISTRATION" type="bool" required="false">True se e' disabilitata la creazione/eliminazione di collezioni, false altrimenti.</param>
+        <param name="GALLERY_ADMIN__DISABLE_GALLERY_ADMINISTRATION" type="bool" required="false">True se e' disabilitata la creazione/eliminazione di gallery, false altrimenti.</param>
+        
+        <param name="GALLERY_RESIZE_BY_WIDTH" type="int" required="false">Larghezza da utilizzare per il ridimensionamento dell'immagine visualizzate nelle gallery.</param>
+        <param name="GALLERY_RESIZE_BY_HEIGHT" type="int" required="false">Altezza da utilizzare per il ridimensionamento dell'immagine visualizzate nelle gallery.</param>
+    </config-params>
+
+    <available-blocks>
+        <block name="gallery/view/default">
+            <param name="gallery_name" type="string" required="true">Nome/percorso della gallery</param>
+            <param name="thumb_image_height" type="int" required="true">Altezza del thumbnail</param>
+        </block>
+        <block name="gallery/view/image_list">
+            <param name="gallery_name" type="string" required="true">Nome/percorso della gallery</param>
+            <param name="thumb_image_height" type="int" required="true">Altezza del thumbnail</param>
+        </block>
+        <block name="gallery/view/single_image">
+            <param name="gallery_name" type="string" required="true">Nome/percorso della gallery</param>
+            <param name="thumb_image_height" type="int" required="true">Altezza del thumbnail</param>
+            <param name="thumb_image_index" type="int" required="true">Indice dell'immagine da utilizzare per la visualizzazione</param>
+            <param name="image_list" type="array" required="true">Elenco delle immagini</param>
+        </block>
+        <block name="gallery/view/single_link">
+            <param name="gallery_name" type="string" required="true">Nome/percorso della gallery</param>
+            <param name="link_text" type="string" required="true">Testo o html da utilizzare per la visualizzazione della gallery</param>
+            <param name="image_list" type="array" required="true">Elenco delle immagini</param>
+        </block>
+        <block name="gallery/view/tree">
+            <param name="tree_elements" type="array" required="true">Nome/percorso della gallery</param>
+        </block>
+        <block name="gallery/view/tree_element">
+            <param name="gallery_name" type="string" required="true">Nome/percorso della gallery</param>
+            <param name="thumb_image_height" type="int" required="true">Altezza del thumbnail</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+
+        <action name="create_tables">
+            <mkdir relative_path="/immagini/gallery/" />
+
+            <create_or_update_table_fields table_name="tab_gallery_collections" >
+                <autoincrement_id name="id_gallery_collection" />
+                <text_128 name="key" null="false" />
+                <unique name="key" />
+                <text_512 name="title" null="false" />
+                <text_1024 name="description" null="true" />
+                <text_128 name="folder" null="false" />
+                <datetime name="dataora_creazione" null="false" />
+                <datetime name="dataora_ultima_modifica" null="false" />
+            </create_or_update_table_fields>
+
+            <create_or_update_table_fields table_name="tab_galleries">
+                <autoincrement_id name="id_gallery" />
+                <text_128 name="key" null="false" />
+                <external_id name="id_gallery_collection" />
+                <text_512 name="title" null="false" />
+                <text_1024 name="description" null="false" />
+                <text_128 name="folder" null="false" />
+                <datetime name="dataora_creazione" null="false" />
+                <datetime name="dataora_ultima_modifica" null="false" />
+            </create_or_update_table_fields>
+
+            <create_or_update_table_fields table_name="tab_gallery_images">
+                <autoincrement_id name="id_gallery_image" />
+                <external_id name="id_gallery" null="false" refers_to="tab_galleries" />
+                <text_128 name="image_name" null="false" />
+                <text_512 name="title" null="false" />
+            </create_or_update_table_fields>
+
+            <create_or_update_do name="GalleryCollection" table_name="tab_gallery_collections" location="/lib/gallery/db" />
+            <create_or_update_do name="Gallery" table_name="tab_galleries" location="/lib/gallery/db" />
+            <create_or_update_do name="GalleryImage" table_name="tab_gallery_images" location="/lib/gallery/db" />
+
+        </action>
+        
+        <action name="drop_tables">
+            <rmdir relative_path="/immagini/gallery/" />
+            
+            <drop_table table_name="tab_gallery_collections" />
+            <drop_table table_name="tab_galleries" />
+            <drop_table table_name="tab_gallery_images" />
+            
+            <drop_do name="GalleryCollection" location="/lib/gallery/db" />
+            <drop_do name="Gallery" location="/lib/gallery/db" />
+            <drop_do name="GalleryImage" location="/lib/gallery/db" />
+        </action>
+
+        <action name="install">
+            <add relative_path="immagini/" />
+            <add relative_path="lib/" />
+            <add relative_path="js/" />
+            <add relative_path="include/" />
+            <add relative_path="css/" />
+            <add relative_path="contenuti/" />
+            <add relative_path="blocks/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="immagini/" />
+            <remove relative_path="lib/" />
+            <remove relative_path="js/" />
+            <remove relative_path="include/" />
+            <remove relative_path="css/" />
+            <remove relative_path="contenuti/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+</module-declaration>

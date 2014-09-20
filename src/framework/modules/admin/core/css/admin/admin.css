@@ -1,0 +1,34 @@
+body
+{
+    background-color : #FFF;
+    color: #000;
+}
+
+table.tabella_contatti_small
+{
+    text-align: left;
+    font-family: Arial;
+    font-size: 9px;
+    font-weight: 600;
+}
+table.tabella_contatti_small tbody tr td { padding : 3px; }
+.azioni { text-align: right; padding:5px; }
+.tabella_admin {width:100%; border:0px; }
+.tabella_admin td { border-bottom:1px solid #f2f2f2; }
+.paneltable {padding:0px; font-family:arial; font-size:11px; width:100%;}
+.altsx {width:11px; height:46px; background-image:url('/immagini/grafica/layouts/admin/altsx.png');}
+.altce {height:46px; background-image:url('/immagini/grafica/layouts/admin/altce.png'); font-weight:bold;}
+.altdx {height:46px; background-image:url('/immagini/grafica/layouts/admin/altdx.png');width:20px;}
+.altsxg {width:11px; height:46px; background-image:url('/immagini/grafica/layouts/admin/altsxg.png');}
+.altceg {height:46px; background-image:url('/immagini/grafica/layouts/admin/altceg.png'); font-weight:bold;}
+.altdxg {height:46px; background-image:url('/immagini/grafica/layouts/admin/altdxg.png');width:20px;}
+.medsx {width:11px; background-image:url('/immagini/grafica/layouts/admin/medsx.png');}
+.medce {background-image:url('/immagini/grafica/layouts/admin/medce.png');}
+.meddx { background-image:url('/immagini/grafica/layouts/admin/meddx.png');width:20px;}
+.bassx {width:11px; height:15px; background-image:url('/immagini/grafica/layouts/admin/bassx.png');}
+.basce {height:15px; background-image:url('/immagini/grafica/layouts/admin/basce.png');}
+.basdx {height:15px; background-image:url('/immagini/grafica/layouts/admin/basdx.png');width:20px;}
+.coldx {min-width:200px;width:200px;max-width:200px;}
+.colsx {min-width:200px;width:200px;max-width:200px;}
+
+.crabscredits {font-size:10px; color:#666; text-align:left; font-family:arial;}

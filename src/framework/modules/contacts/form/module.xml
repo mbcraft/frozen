@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Form per la raccolta contatti.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Form contatti - prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="contacts/form">
+            <description>Questo blocco visualizza la form per l'invio di un messaggio.</description>
+            <param name="dest_address" type="string" required="true">L'indirizzo a cui inviare la mail.</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="include/" />
+            <add relative_path="blocks/" />
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+            <remove relative_path="include/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+</module-declaration>

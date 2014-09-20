@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="2" minor="1" rev="7">
+
+    <description>Modulo ecommerce cart di test.</description>
+
+    <version-history>
+        <version major="2" minor="1" rev="7">
+            Bugfix del 20/10/2011
+        </version>
+        <version major="1" minor="1" rev="0">
+            Bugfix del 16/10/2011
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base del modulo di ecommerce per test
+        </version>
+    </version-history>
+
+    <customization-files>
+        <customization-file path="include/messages/mail/alert/nuovo_iscritto.php.inc" required="true" sample="false"/>
+        <customization-file path="include/messages/mail/alert/nuovo_iscritto_confermato.php.inc" required="true" sample="true" />
+    </customization-files>
+    <plugin-dirs>
+        <plugin-dir path="ecommerce/cart/customization">
+            <description>Customizzazioni del carrello.</description>
+        </plugin-dir>
+        <plugin-dir path="ecommerce/cart/validation">
+            <description>Validazioni per il carrello.</description>
+        </plugin-dir>
+
+    </plugin-dirs>
+    <config-params>
+        <param name="ECOMMERCE_CART__MAX_PRODUCTS" type="int" required="false">Numero massimo di prodotti che possono essere aggiunti al carrello.</param>
+        <param name="ECOMMERCE_CART__ENABLE_BONIFICO_BANCARIO" type="boolean" required="true">Abilitazione del pagamento con bonifico.</param>
+    </config-params>
+
+    <available-blocks>
+        <block name="ecommerce/cart/riga_carrello">
+            <description>Questo blocco rappresenta la form completa e grande.</description>
+            <param name="product" type="array" required="true">Il prodotto da visualizzare</param>
+        </block>
+        <block name="ecommerce/cart/checkout_form">
+            <description>Questo blocco rappresenta la form di checkout del carrello.</description>
+            <param name="on_success" type="url" required="true">Il link a cui essere redirezionati dopo il checkout avvenuto con successo.
+            </param>
+            <param name="on_failure" type="url" required="true">Il link a cui essere redirezionati in caso di checkout
+                fallito.
+            </param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <mkdir relative_path="ciccia/" />
+            <add relative_path="js/" />
+
+            <create_or_update_table_fields table_name="my_entity">
+
+                <autoincrement_id name="my_entity_id" />
+                <text_512 name="titolo" null="false" />
+                <unsigned_int_8 name="type" null="true" />
+                <text_65k name="descrizione" null="false" />
+                <fulltext name="titolo" />
+                <unique name="type" />
+
+            </create_or_update_table_fields>
+
+
+            <insert_row to="my_entity">
+                <field name="my_entity_id">1</field>
+                <field name="titolo">Titolo dell'entità</field>
+                <field name="descrizione">Bla bla bla ...</field>
+            </insert_row>
+
+            <insert_row to="my_entity">
+                <field name="my_entity_id">2</field>
+                <field name="titolo">Un titolo diverso</field>
+                <field name="descrizione">Bla bla bla e ancora bla ...</field>
+            </insert_row>
+
+            <insert_row to="my_entity">
+                <field name="my_entity_id">3</field>
+                <field name="titolo">La terza ed ultima entità di test</field>
+                <field name="descrizione">Bla bla bla e ancora bla ... bla bla bla ...</field>
+            </insert_row>
+
+
+            <create_or_update_table_fields table_name="my_entity">
+                <text_512 name="new_field" null="true" />
+                <unsigned_int_8 name="int_field" null="true" />
+            </create_or_update_table_fields>
+
+            <delete_row from="my_entity" id="2" />
+
+        </action>
+
+        <action name="create_view">
+            <create_or_update_view_fields view_name="vendite_full">
+                <join from_table="vendite" from_field="id_destinatario" to_table="destinatari" />
+                <join from_table="vendite" from_field="id_prodotto" to_table="prodotti" />
+                <import_fields table_name="vendite">
+                    <field name="id_vendita" />
+                    <field name="quantita" />
+                </import_fields>
+                <import_fields table_name="prodotti">
+                    <field name="nome_prodotto" />
+                    <field name="descrizione" />
+                    <field name="prezzo" />
+                </import_fields>
+                <import_fields table_name="destinatari">
+                    <field name="nome" />
+                    <field name="cognome" />
+                </import_fields>
+            </create_or_update_view_fields>
+        </action>
+
+        <action name="drop_view">
+            <drop_view view_name="vendite_full" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <rmdir relative_path="ciccia" />
+            <remove relative_path="js/" />
+
+            <drop_table table_name="my_entity" />
+
+        </action>
+    </actions>
+
+    <required-modules>
+        <module name="ecommerce/base" major="1" minor="0" rev="0" />
+        <module name="ecommerce/forms" major="2" minor="2" rev="0" />
+    </required-modules>
+
+    <provided-services>
+        <service name="ecommerce/sell_products" />
+    </provided-services>
+
+    <required-services>
+        <service name="products/categories" />
+        <service name="products/blabla" major="2" minor="1" rev="1"/>
+    </required-services>
+
+</module-declaration>

@@ -1,0 +1,17 @@
+
+Gestione di CSS cross browser
+
+*** FEATURES ***
+
+- Rendering dei CSS presi da varie cartelle (framework / app)
+
+Modalità supportate :
+
+-- inline (minimizza connessioni)
+-- imports (riduce il consumo di banda)
+-- link (via di mezzo)
+
+*** TODO ***
+
+- Supporto per rendering CSS dei moduli
+- ???

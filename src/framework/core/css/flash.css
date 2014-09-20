@@ -1,0 +1,34 @@
+/* 
+    Document   : flash
+    Created on : 24-set-2012, 11.32.41
+    Author     : marco
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+flash_container 
+{ 
+    min-width:80%;
+    max-width:80%;
+    width:80%;
+    
+    min-height:80px;
+}
+
+ok_container
+{
+    border-color: green;
+    border-width: 2px;
+}
+
+warning_container
+{
+    border-color: yellow;
+    border-width: 2px;
+}
+
+error_container
+{
+    border-color: red;
+    border-width: 2px;
+}

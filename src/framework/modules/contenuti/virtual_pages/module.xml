@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="99" show="false">
+    <description>Modulo per la gestione dei contenuti versione breeze.</description>
+    <version-history>
+        <version major="0" minor="1" rev="99">
+            Versione ancora da ultimare
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+
+
+        </action>
+
+        <action name="uninstall">
+
+        </action>
+    </actions>
+    
+</module-declaration>

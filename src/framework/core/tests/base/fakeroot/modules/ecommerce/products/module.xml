@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Versione minimale della gestione utenti.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Modulo di prova di creazione tabelle.
+        </version>
+    </version-history>
+
+
+
+
+
+    <actions>
+        <!-- Azione utilizzata per l'installazione del modulo : name="install" -->
+        <action name="install">
+            <mkdir relative_path="rotator/" />
+            <unzip relative_zip_path="files/rotator_gallery.zip" extract_to="rotator/" />
+            <script name="my_script" />
+        </action>
+
+        <!-- Azione utilizzata per la disinstallazione : name="uninstall" -->
+        <action name="uninstall">
+            <rmdir relative_path="rotator/" />
+        </action>
+    </actions>
+</module-declaration>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="4" rev="0">
+    <description>Modulo che consente di utilizzare un rotator di immagini.</description>
+    <version-history>
+        <version major="1" minor="4" rev="0">
+            Aggiunto pannello di amministrazione.
+        </version>
+        <version major="1" minor="3" rev="0">
+            Corretti alcuni malfunzionamenti nel rotator.
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="banners/rotator/default">
+            <description>Questo blocco visualizza il banner con rotazione delle immagini.</description>
+            <param name="rotator_name" type="string" required="true">Nome del rotator da visualizzare, preso dalla cartella /immagini/grafica/banners/rotator/.</param>
+            <param name="min_width" type="int" required="true">Larghezza minima del rotator</param>
+            <param name="min_height" type="int" required="true">Altezza minima del rotator</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="contenuti/" />
+            <add relative_path="include/" />
+            <add relative_path="blocks/" />
+            <add relative_path="js/" />
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="contenuti/" />
+            <remove relative_path="include/" />
+            <remove relative_path="blocks/" />
+            <remove relative_path="js/" />
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

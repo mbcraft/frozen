@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="0" show="false">
+    <description>Modulo per la gestione delle immagini.</description>
+    <version-history>
+        <version major="0" minor="1" rev="0">
+            Versione in lavorazione
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+
+        </action>
+
+        <action name="uninstall">
+
+        </action>
+    </actions>
+
+</module-declaration>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Link per l'invio di una mail tramite client di posta.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/send_email_button">
+            <description>Visualizza un pulsante per l'invio di una mail.</description>
+            <param name="to" required="true" type="string">L'indirizzo mail del destinatario.</param>
+            <param name="subject" required="true" type="string">L'argomento della mail.</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <add relative_path="immagini/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <remove relative_path="immagini/" />
+        </action>
+    </actions>
+
+</module-declaration>

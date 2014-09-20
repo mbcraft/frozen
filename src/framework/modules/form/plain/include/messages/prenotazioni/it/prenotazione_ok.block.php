@@ -1,0 +1,1 @@
+Grazie per averci inviato la sua richiesta. Sar&agrave; ricontattato per la conferma della prenotazione.

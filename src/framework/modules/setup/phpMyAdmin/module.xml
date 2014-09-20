@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0" show="false">
+    <description>Installazione di phpMyAdmin per la gestione del database.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione di phpMyAdmin : 3.3.10
+        </version>
+    </version-history>
+    <actions>
+        <action name="install">
+            <mkdir relative_path="setup/" />
+            <extract relative_archive_path="files/phpMyAdmin_3_3_10__packaged.fga" extract_to="setup/" />
+        </action>
+
+        <action name="uninstall">
+            <rmdir relative_path="setup/phpMyAdmin/" force="true" />
+            <rmdir relative_path="setup/" />
+        </action>   
+    </actions>
+
+</module-declaration>

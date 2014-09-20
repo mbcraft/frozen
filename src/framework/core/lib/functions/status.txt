@@ -1,0 +1,12 @@
+
+Funzioni generiche
+
+*** FEATURES ***
+
+- Creazione di istanze e nuove classi
+
+- Funzioni per stampa sicura link e test in html
+
+*** TODO ***
+
+- Costruzione di classi elaborata (se sarà necessario per ottenere una migliore gestione del codice).

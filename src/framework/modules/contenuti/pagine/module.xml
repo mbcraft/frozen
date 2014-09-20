@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="0" show="false">
+    <description>Modulo per la gestione delle pagine.</description>
+    <version-history>
+        <version major="0" minor="1" rev="0">
+            Versione ancora da ultimare
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <!-- Tabella delle pagine virtuali -->
+            <create_or_update_table_fields table_name="tab_pagine">
+                <autoincrement_id name="id_pagina" />
+                <external_id name="id_folder" null="false" />
+                <text_64 name="nome" null="false" />
+                <text_32 name="layout" null="false" />
+                <text_64 name="page_title" null="false" />
+                <text_64 name="page_description" null="true" />
+                <text_16 name="codice_lingua" null="true" />
+                <datetime name="dataora_creazione" null="false" />
+                <datetime name="dataora_ultima_modifica" null="false" />
+                <text_32 name="keywords" null="true" />
+            </create_or_update_table_fields>
+
+            <!-- Tabella degli elementi delle pagine -->
+            <create_or_update_table_fields table_name="tab_elementi_pagina">
+                <autoincrement_id name="id_elemento_pagina" />
+                <external_id name="id_pagina" null="false" />
+                <text_64 name="percorso_settore" null="false" />
+                <text_32 name="nome_controller" null="false" /> <!-- da sistemare -->
+                <external_id name="id_elemento_pagina" null="false" />
+            </create_or_update_table_fields>
+
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+
+            <drop_table table_name="tab_pagine" />
+            <drop_table table_name="tab_elementi_pagina" />
+
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

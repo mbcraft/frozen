@@ -1,0 +1,42 @@
+Options +FollowSymLinks
+
+#
+# Abilito il rewrite engine
+#
+
+RewriteEngine on
+
+#
+# Elenco delle directory nel quale l'accesso è diretto.
+#
+
+RewriteRule ^include/(.*)$ / [L]
+
+RewriteRule ^framework/(.*)$ framework/$1 [L]
+RewriteRule ^setup/(.*)$ setup/$1 [L]
+RewriteRule ^test/(.*)$ test/$1 [L]
+RewriteRule ^data/(.*)$ data/$1 [L]
+RewriteRule ^tmp/(.*)$ tmp/$1 [L]
+
+#
+# Directory riservate -> routing
+#
+#RewriteRule ^app/(.*) /framework/core/lib/base/routing.php [QSA,L]
+
+#
+# Directory vuota -> routing
+#
+RewriteRule ^$ /index.php [QSA,L]
+
+#
+# Root del sito
+#
+RewriteRule ^/$ /index.php [QSA,L]
+
+
+#
+# Qualsiasi altro file che non esiste -> routing
+#
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /framework/core/lib/base/routing.php [QSA,L]
+

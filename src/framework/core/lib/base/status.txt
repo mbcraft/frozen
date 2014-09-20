@@ -1,0 +1,29 @@
+
+Librerie core relative al framework
+
+*** FEATURES ***
+
+- Autoloader configurabile con skip cartelle da non esaminare ( ".", "..", ".svn", ecc...)
+
+- Supporto ad autoloading e riconoscimento per : classi
+
+- Configurazione basata sull'host con configurazione comune
+
+- Autoloading per : block, pages, layout
+
+- Log
+
+- Benchmark
+
+- Contenitore dati oggetto generico
+
+*** TODO ***
+
+- Gestione dei moduli
+
+- Ottimizzazione risorse CSS
+
+- Ottimizzazione risorse JS
+
+- Ottimizzazione risorse IMG
+

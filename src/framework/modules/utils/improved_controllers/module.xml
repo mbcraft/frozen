@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="0" rev="1" show="false">
+    <description>Classi aggiuntive per controller "smart".</description>
+    <version-history>
+        <version major="0" minor="0" rev="1">
+            Prima versione
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="install">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

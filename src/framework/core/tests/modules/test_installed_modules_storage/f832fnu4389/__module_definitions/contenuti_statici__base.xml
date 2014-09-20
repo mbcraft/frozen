@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Contenuti statici base.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <provided-services>
+        <service name="contenuti_statici" />
+    </provided-services>
+</module-declaration>

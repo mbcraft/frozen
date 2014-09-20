@@ -1,0 +1,21 @@
+element data-updates
+{
+    element update
+    {
+        attribute name { text },
+        element select
+        {
+            element filter
+            {
+                attribute attr_source { text },
+                attribute query { "equal" | "not_equal" | "greater_than" | "greater_than_or_equal" | "less_than" | "less_than_or_equal" },
+                attribute value { text }?,
+            }+
+        },
+        element field
+        {
+            attribute name { text },
+            attribute value { text }
+        }+
+    }* &
+}

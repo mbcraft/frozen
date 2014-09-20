@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="99" show="false">
+    <description>Modulo per la gestione dei testi.</description>
+    <version-history>
+        <version major="0" minor="1" rev="99">
+            Versione ancora da ultimare
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <create_or_update_table_fields table_name="tab_testi">
+                <autoincrement_id name="id_testo" />
+                <external_id name="id_folder" null="false" />
+                <text_128 name="titolo" null="false" />
+                <text_65k name="testo" null="false" />
+                <text_16 name="codice_lingua" null="false" />
+                <text_64 name="chiave" null="false" />
+            </create_or_update_table_fields>
+
+            <add relative_path="blocks/" />
+            <add relative_path="contenuti/" />
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <drop_table table_name="tab_testi" />
+
+            <remove relative_path="blocks/" />
+            <remove relative_path="contenuti/" />
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

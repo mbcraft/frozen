@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Modulo per la visualizzazione di un news ticker (widget).</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione con parametri vari
+        </version>
+        <version major="0" minor="1" rev="0">
+            Versione iniziale
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="contenuti/news_ticker/simple">
+            <description>Visualizza uno scroller di elementi (news o altro).</description>
+            <param name="news_ticker_name" required="true" type="string">Nome del news ticker.</param>
+            <param name="elements" required="true" type="array">Array degli elementi da visualizzare.</param>
+            <param name="num_entries" required="false" type="int">Numero delle entry visualizzate contemporaneamente.</param>
+            <param name="delay" required="false" type="int">Delay dello scrolling (ms).</param>
+            <param name="speed" required="false" type="int">Velocità dello scrolling (ms).</param>
+        </block>
+    </available-blocks>
+    
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <add relative_path="js/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <remove relative_path="js/" />
+        </action>
+    </actions>
+
+</module-declaration>

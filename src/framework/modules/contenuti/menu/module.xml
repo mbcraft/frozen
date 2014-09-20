@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="99" show="false">
+    <description>Modulo per la gestione dei menu delle pagine.</description>
+    <version-history>
+        <version major="0" minor="1" rev="99">
+            Versione ancora da ultimare
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+
+            <!-- Rappresenta un menù con tutte le sue ramificazioni -->
+            <create_or_update_table_fields table_name="tab_menu_bar">
+                <autoincrement_id name="id_menu_bar" />
+                <text_16 name="titolo" null="false" />
+                <text_16 name="chiave" null="false" />
+                <text_16 name="codice_lingua" null="false" />
+            </create_or_update_table_fields>
+
+            <!-- Rappresenta un elemento del menù, con gestione dell'ordine e degli stili -->
+            <create_or_update_table_fields table_name="tab_menu_item">
+                <autoincrement_id name="id_menu_item" />
+                <external_id name="id_menu" null="false" />
+                <external_id name="id_parent_menu_item" null="false" />
+                <unsigned_int_8 name="ordine" null="true" />
+                <text_16 name="tipo_elemento_menu" null="false" />
+                <external_id name="id_elemento_menu" null="false" />
+                <text_512 name="style" null="true" />
+            </create_or_update_table_fields>
+
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <drop_table table_name="tab_menu_bar" />
+            <drop_table table_name="tab_menu_item" />
+
+
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

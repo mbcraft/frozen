@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Blocco per la selezione di una data.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/datepicker">
+            <description>Visualizza un selettore di date.</description>
+            <param name="input_id" required="true" type="string">Id del tag input a cui attaccare il datepicker.</param>
+            <param name="image_id" required="false" type="string">Id del tag immagine da cui far comparire il datepicker.</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <add relative_path="js/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <remove relative_path="js/" />
+        </action>
+    </actions>
+
+</module-declaration>

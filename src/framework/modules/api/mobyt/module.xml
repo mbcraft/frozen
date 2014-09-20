@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0" show="false">
+    <description>Librerie per l'interfacciamento con mobyt</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Versione base.
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

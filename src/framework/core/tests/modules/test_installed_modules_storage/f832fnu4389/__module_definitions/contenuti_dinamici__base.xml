@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Contenuti dinamici base.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <required-services>
+        <service name="contenuti_statici"/>
+        <service name="gestione_contenuti" />
+    </required-services>
+    <required-modules>
+        <module name="contenuti_statici/base"/>
+    </required-modules>
+</module-declaration>

@@ -1,0 +1,8 @@
+<?
+
+class DocumentiPeer extends AbstractPeer
+{
+    
+}
+
+?>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Blocchi per la visualizzazione di orologi flash nei siti.</description>
+    <version-history>
+        <version major="1" minor="1" rev="0">
+            Aggiunta host orologi
+        </version>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/clocks/digital_clock">
+            <description>Visualizza un orologio digitale.</description>
+            <param name="timeOffset" type="string" required="false">Orario</param>
+            <param name="faceColor" type="hexcolor" required="false">Colore frontale</param>
+            <param name="faceColorAlpha" type="float" required="false">Trasparenza del colore frontale</param>
+            <param name="numbersColor" type="hexcolor" required="false">Colore delle cifre</param>
+            <param name="width" type="int" required="false">Larghezza dell'orologio</param>
+            <param name="height" type="int" required="false">Altezza dell'orologio</param>
+        </block>
+        <block name="widgets/clocks/analog_clock_1">
+            <description>Visualizza un orologio analogico.</description>
+            <param name="timeOffset" type="string" required="false">Orario</param>
+            <param name="faceColor" type="hexcolor" required="false">Colore frontale</param>
+            <param name="numbersColor" type="hexcolor" required="false">Colore delle cifre</param>
+            <param name="edgeColor" type="hexcolor" required="false">Colore del bordo</param>
+            <param name="centerColor" type="hexcolor" required="false">Colore del centro</param>
+            <param name="hourHandColor" type="hexcolor" required="false">Colore lancetta ore</param>
+            <param name="minuteHandColor" type="hexcolor" required="false">Colore lancetta minuti</param>
+            <param name="secondHandColor" type="hexcolor" required="false">Colore lancetta secondi</param>
+
+            <param name="width" type="int" required="false">Larghezza dell'orologio</param>
+            <param name="height" type="int" required="false">Altezza dell'orologio</param>
+        </block>
+        <block name="widgets/clocks/analog_clock_2">
+            <description>Visualizza un orologio analogico.</description>
+            <param name="timeOffset" type="string" required="false">Orario</param>
+            <param name="faceColor" type="hexcolor" required="false">Colore frontale</param>
+            <param name="numbersColor" type="hexcolor" required="false">Colore delle cifre</param>
+            <param name="edgeColor" type="hexcolor" required="false">Colore del bordo</param>
+            <param name="centerColor" type="hexcolor" required="false">Colore del centro</param>
+            <param name="glowColor" type="hexcolor" required="false">Colore del bagliore</param>
+            <param name="hourHandColor" type="hexcolor" required="false">Colore lancetta ore</param>
+            <param name="minuteHandColor" type="hexcolor" required="false">Colore lancetta minuti</param>
+            <param name="secondHandColor" type="hexcolor" required="false">Colore lancetta secondi</param>
+
+            <param name="width" type="int" required="false">Larghezza dell'orologio</param>
+            <param name="height" type="int" required="false">Altezza dell'orologio</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/" />
+            <add relative_path="swf/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/" />
+            <remove relative_path="swf/" />
+        </action>
+    </actions>
+
+</module-declaration>

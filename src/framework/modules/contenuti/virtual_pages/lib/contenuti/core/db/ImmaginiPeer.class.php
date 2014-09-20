@@ -1,0 +1,8 @@
+<?
+
+class ImmaginiPeer extends AbstractPeer
+{
+    
+}
+
+?>

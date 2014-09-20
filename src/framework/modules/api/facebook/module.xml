@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="2" show="false">
+    <description>Libreria per l'interfacciamento con facebook</description>
+    <version-history>
+        <version major="1" minor="0" rev="2">
+            Rimosso FacebookUtils, spostato in accounts/social_network_persona
+        </version>
+        <version major="1" minor="0" rev="1">
+            Aggiunta di plugin per gestione azione after login.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base.
+        </version>
+    </version-history>
+
+
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+        </action>
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

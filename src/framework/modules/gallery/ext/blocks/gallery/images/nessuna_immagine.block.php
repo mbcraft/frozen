@@ -1,0 +1,1 @@
+<center><h2>Non sono presenti immagini in questa gallery.</h2></center>

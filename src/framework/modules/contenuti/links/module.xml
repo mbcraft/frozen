@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="1" rev="0" show="false">
+    <description>Modulo per la gestione dei link.</description>
+    <version-history>
+        <version major="0" minor="1" rev="0">
+            Versione in lavorazione
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <!-- Rappresenta un link annesso -->
+            <create_or_update_table_fields table_name="tab_links">
+                <autoincrement_id name="id_link" />
+                <text_64 name="titolo" null="false" />
+                <external_id name="id_pagina" null="true" />
+            </create_or_update_table_fields>
+
+            <add relative_path="lib/" />
+        </action>
+
+        <action name="uninstall">
+            <drop_table table_name="tab_links" />
+
+            <remove relative_path="lib/" />
+        </action>
+    </actions>
+
+</module-declaration>

@@ -1,0 +1,1 @@
+<label for="input_chiave">Chiave : </label><input id="input_chiave" type="text" name="chiave" value="<?=isset($chiave) ? $chiave : "" ?>" /><br />

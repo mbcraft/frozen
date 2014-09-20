@@ -1,0 +1,7 @@
+<?
+
+class ElementiPaginaPeer extends AbstractPeer
+{
+}
+
+?>

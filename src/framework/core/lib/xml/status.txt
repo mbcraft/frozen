@@ -1,0 +1,9 @@
+
+Gestione di contenuti XML
+
+*** FEATURES ***
+
+- Costruzione di contenuti XML tramite XMLBuilder, che consente la creazione di nodi
+con l'inserimento di attributi
+
+*** TODO ***

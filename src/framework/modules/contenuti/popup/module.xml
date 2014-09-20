@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="0" rev="1">
+    <description>Permette la visualizzazione di popup tramite div.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Migliorato passaggio parametri con utilizzo width ed height in formato classico.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Prima versione funzionante.
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="contenuti/mostra_popup">
+            <description>Visualizza un popup all'interno del div di id 'popup'.</description>
+            <param name="url" type="string" required="true">Il nome della classe css su cui abilitare lo scroller (verticale).</param>
+            <param name="width" type="int" required="true">La larghezza del popup visualizzato</param>
+            <param name="height" type="int" required="true">L'altezza del popup visualizzato</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="include/" />
+            <add relative_path="js/" />
+            <add relative_path="blocks/" />
+
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="include/" />
+            <remove relative_path="js/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+</module-declaration>

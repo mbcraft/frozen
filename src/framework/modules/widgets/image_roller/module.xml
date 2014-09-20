@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0">
+    <description>Visualizzazione di un roller per le immagini.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/image_roller">
+            <description>Visualizza un roller di una galleria di immagini.</description>
+            <param name="gallery_name" required="true" type="string">Il nome della galleria.</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="js/" />
+            <add relative_path="blocks/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="js/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+</module-declaration>

@@ -1,0 +1,20 @@
+
+Classi relative al routing delle richieste HTTP
+
+*** FEATURES ***
+
+- Supporto a pagine php standard : se il file php viene trovato viene caricato direttamente.
+- Routing configurabile con match di :
+
+*** : tutto tranne /
+*opt_slash* : slash opzionale
+*word* : testo
+*num* : numeri
+*no_dot* : testo tranne / e .
+
+Il match viene effettuato ad un controller ed una determinata action con un determinato format.
+
+*** TODO ***
+
+- Riaggiunta del match dei parametri nella url
+- Altro da preventivare

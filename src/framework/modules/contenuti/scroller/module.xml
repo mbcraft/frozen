@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="0" minor="0" rev="1">
+    <description>Scroller verticale per contenuti testuali.</description>
+    <version-history>
+        <version major="0" minor="0" rev="1">
+            Prima versione. E' necessario definire i seguenti css :
+            #id elemento o classe
+            {
+            z-index:xyz;
+            overflow: auto;
+            }
+            .jspVerticalBar
+            {
+            width: 3px;
+            }
+
+
+            .jspTrack
+            {	background: #ccc;
+            }
+
+            .jspDrag
+            {
+            background: #333;
+            }
+
+            .jspVerticalBar .jspArrow
+            {
+            height: 3px;
+            }
+
+            .jspHorizontalBar .jspArrow
+            {
+            width: 3px;
+
+            }
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="contenuti/scroller">
+            <description>Visualizza uno scroller di contenuto</description>
+            <param name="class" type="string" required="false">Il nome della classe css su cui abilitare lo scroller (verticale).</param>
+            <param name="id" type="string" required="false">Il nome dell'id su cui abilitare lo scroller (verticale).</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="css/" />
+            <add relative_path="js/" />
+            <add relative_path="blocks/" />
+
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="css/" />
+            <remove relative_path="js/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+</module-declaration>

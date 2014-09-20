@@ -1,0 +1,1 @@
+<center><h2>Non sono presenti gruppi banner.</h2></center>

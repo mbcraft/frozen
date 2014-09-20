@@ -1,0 +1,1 @@
+<center><h2>Non sono presenti gallery in questa collezione.</h2></center>

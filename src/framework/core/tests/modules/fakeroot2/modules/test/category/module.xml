@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="2" rev="3" show="true">
+    <description>Modulo di test di categorie.</description>
+    <version-history>
+        <version major="1" minor="2" rev="3">
+            Versione bla bla bla
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+            <add relative_path="lib/" />
+            <add relative_path="blocks/" />
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="lib/" />
+            <remove relative_path="blocks/" />
+        </action>
+    </actions>
+
+
+</module-declaration>

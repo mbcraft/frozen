@@ -1,4 +1,4 @@
-** 'Popcorn' php framework - previously known as 'Charme-Crabs' **
+** 'Frozen' php framework - previously known as 'Charme-Crabs' **
 
 Current version : 3.3.4
 

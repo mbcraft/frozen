@@ -1,5 +1,7 @@
 ** 'Popcorn' php framework - previously known as 'Charme-Crabs' **
 
+Current version : 3.3.4
+
 Warnings : 
 
 This framework has some vulnerabilities. Use at your own risk.

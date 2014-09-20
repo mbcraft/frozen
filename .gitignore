@@ -1,1 +1,4 @@
 /.project
+/nbproject/
+/src/tmp/
+/src/include/storage/*

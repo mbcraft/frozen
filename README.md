@@ -13,6 +13,8 @@ gd is required for image resizing.
 mcrypt is required for message digests.
 session is required.
 
+apache must have mod_rewrite enabled.
+
 
 Features :
 
@@ -31,6 +33,8 @@ Installation :
 You need to create in the root folder a writable 'tmp' folder
  and also an 'include/storage/RANDOM_FOLDER_NAME' folder.
 
+Also, the folder /framework/core/tests/ should be writable too.
+
 You can check the unit tests pointing your browser to :
 
 http://virtual_host_name/framework/core/tests/all_tests.php
@@ -40,6 +44,7 @@ Also various utilities are present in the framework/utilities folder.
 Some sample modules are also provider.
 
 Roadmap :
+
 
 - remove dependency from BasicObject class.
 - integrate a new logger class. 

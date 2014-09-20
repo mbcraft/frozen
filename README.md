@@ -26,7 +26,10 @@ to '/vendor'. In Charme-Crabs, files and folders are added and removed from/to
 the root project.
 
 This framework also defines an xml format for modules. Syntax is validable 
-against '/framework/core/modules.rnc'.
+against '/framework/core/modules/module.rnc'.
+
+Also, an xml format for database updates was in development.
+See '/framework/core/modules/data-updates.rnc'.
 
 Installation :
 

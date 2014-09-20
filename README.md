@@ -7,7 +7,12 @@ Requirements :
 
 LAMP stack.
 PHP > 5.2.10
-Some common modules. gd for image resizing.
+zlib is required for compressing/uncompressing modules.
+zip is required for ZipArchive class.
+gd is required for image resizing.
+mcrypt is required for message digests.
+session is required.
+
 
 Features :
 

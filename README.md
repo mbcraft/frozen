@@ -1,4 +1,4 @@
-** 'Frozen' php framework - previously known as 'Charme-Crabs' **
+** 'Popcorn' php framework - previously known as 'Charme-Crabs' **
 
 Warnings : 
 
@@ -43,6 +43,7 @@ folder.
 The first level is a raw query helper, the second is an ActiveRecord one.
 This classes do not need any kind of mapping. Simply create a class
 extending AbstractPeer and one extending AbstractDO and you're done.
+Only MySql is supported by now, but other layers can be developed if needed.
 
 -- io : some classes are implemented for helping working with files (File)
 and directiories (Dir). There are also classes for zip archives, 
@@ -102,7 +103,19 @@ You can run/check the unit tests pointing your browser to :
 
 http://virtual_host_name/framework/core/tests/all_tests.php
 
-Some tests are not enabled by default (db).
+Some tests are not enabled if some additional things are not set up (db tests).
+
+If you want to enable them you should :
+
+- create a .config.php file in a directory named as your virtual host in 'include/config/', 
+you can call it eg. db_tests.config.php, and define some configs inside :
+
+Config::instance()->TEST_DB_NAME = 'test_db_name'; //put your own
+Config::instance()->TEST_DB_HOST = 'test_db_hostname'; //put your own
+Config::instance()->TEST_DB_USERNAME = 'test_db_username'; //put your own
+Config::instance()->TEST_DB_PASSWORD = 'test_db_password'; //put your own
+
+The db must exist prior test running.
 
 Also various utilities are present in the framework/utilities folder.
 
@@ -111,7 +124,8 @@ Some sample modules are also provider.
 Roadmap :
 
 
-- remove dependency from BasicObject class and integrate a new logger class. 
+- remove dependency from BasicObject class
+- integrate a new logger class. 
 
 
 Contacts :

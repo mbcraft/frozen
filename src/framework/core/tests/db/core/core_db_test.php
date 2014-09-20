@@ -14,7 +14,7 @@ class TestCoreDb extends UnitTestCase
 
     public function setUp()
     {
-        DB::openConnection(Config::instance()->TEST_DB_NAME, "localhost", Config::instance()->TEST_DB_USERNAME, Config::instance()->TEST_DB_PASSWORD, false);
+        DB::openConnection(Config::instance()->TEST_DB_NAME, Config::instance()->TEST_DB_HOST, Config::instance()->TEST_DB_USERNAME, Config::instance()->TEST_DB_PASSWORD, false);
     }
 
     public function tearDown()

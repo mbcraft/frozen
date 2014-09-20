@@ -15,7 +15,7 @@ class AllTests extends TestSuite
         
         $this->TestSuite('All tests');
 
-        $test_list = array("images","request","env","base","modules","pages","controller","html","services","io","session","xml","utils");
+        $test_list = array(/*"db",*/"images","request","env","base","modules","pages","controller","html","services","io","session","xml","utils");
 
         foreach ($test_list as $test_group_name)
             $this->{$test_group_name."Tests"}();

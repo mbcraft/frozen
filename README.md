@@ -1,3 +1,5 @@
+** 'Frozen' php framework - previously known as 'Charme-Crabs' **
+
 Warnings : 
 
 This framework has some vulnerabilities. Use at your own risk.
@@ -63,7 +65,7 @@ A section is a definition of a variable. Variable are used inside layouts.
 Composer. Modules also have folders that are nested/removed from your project.
 The main difference from Composer (but i'm not an expert, this framework
 was created before Composer i think) is that in Composer all things goes
-to '/vendor'. In Charme-Crabs, files and folders are added and removed from/to
+to '/vendor'. In Frozen (previously Charme-Crabs), files and folders are added and removed from/to
 the root project. All modules has a module.xml inside that defines its 
 install/uninstall behaviour.
 
@@ -92,9 +94,15 @@ You need to create in the root folder a writable 'tmp' folder
 
 Also, the folder /framework/core/tests/ should be writable too.
 
-You can check the unit tests pointing your browser to :
+Tests :
+
+Tests are implemented using simpletest framework, included with this 
+framework.
+You can run/check the unit tests pointing your browser to :
 
 http://virtual_host_name/framework/core/tests/all_tests.php
+
+Some tests are not enabled by default (db).
 
 Also various utilities are present in the framework/utilities folder.
 

@@ -114,4 +114,10 @@ Roadmap :
 - remove dependency from BasicObject class and integrate a new logger class. 
 
 
+Contacts :
+
+web : http://www.mbcraft.it
+mail : info [ at ] mbcraft [ dot ] it
+
+
 -Marco Bagnaresi

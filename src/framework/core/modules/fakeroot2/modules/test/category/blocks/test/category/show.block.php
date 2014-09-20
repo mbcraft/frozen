@@ -1,6 +1,0 @@
-<?
-
-
-
-?>
-Category : <?= $category ?>

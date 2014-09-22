@@ -53,13 +53,13 @@ class FormWriter
         {
             ?>
 <form name="<?=$this->form_name ?>" action="<?=$this->default_action ?>" method="POST" id="form__<?=$this->form_name ?>_<?=$this->form_model->__rendering_count() ?>" enctype="multipart/form-data">
-            <?
+            <?php
         }
         else
         {
             ?>
 <form name="<?=$this->form_name ?>" action="<?=$this->default_action ?>" method="POST" id="form__<?=$this->form_name ?>_<?=$this->form_model->__rendering_count() ?>" >
-            <?
+            <?php
         }
     }
     
@@ -75,7 +75,7 @@ class FormWriter
         ?>
     <fieldset>
         <legend><?=$title ?></legend>
-        <?
+        <?php
     }
     /*
      * Chiude il fieldset.
@@ -84,7 +84,7 @@ class FormWriter
     {
         ?>
     </fieldset>
-        <?
+        <?php
         
         self::$fieldset_opened = false;
         self::$current_fieldset_title = null;
@@ -97,7 +97,7 @@ class FormWriter
     {
         ?>
 </form>
-        <?
+        <?php
         
         self::$form_opened = false;
         self::$current_form_name = null;
@@ -129,7 +129,7 @@ class FormWriter
                 throw new FormException("L'azione non e' stata definita!!");
         ?>
     <input type="submit" name="<?=$key ?>" value="<?=$this->form_actions[$key] ?>" ></input>
-        <?
+        <?php
         $this->form_action_count += 1;
     }
     

@@ -34,7 +34,7 @@ Flash::write_error_messages();
     <? Form::on_failure("/admin/gallery/nuova_collection.php") ?>
 
 </form>
-<?
+<?php
 end_admin_panel();
 }
 ?>

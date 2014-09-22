@@ -156,7 +156,7 @@ class ControllerCall
                 //la action non ha dato risultati? invoco il metodo __action_result_null()
                 if ($tmp_result===null)
                 {
-                    $this->__warn("__dispatch_action", "The action result was null ...");
+                    Log::warn("__dispatch_action", "The action result was null ...");
                     $this->action_result_was_null = true;
                     $tmp_result = $this->__action_result_null();
                 }

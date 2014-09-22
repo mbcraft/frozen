@@ -35,7 +35,7 @@ Flash::write_error_messages();
     <? Form::on_failure("/admin/gallery/nuova_gallery.php?id_gallery_collection=".$id_gallery_collection) ?>
 
 </form>
-<?
+<?php
 end_admin_panel();
 }
 ?>

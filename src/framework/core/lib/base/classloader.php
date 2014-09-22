@@ -93,7 +93,7 @@ class ClassLoader extends AbstractLoader
             return;
         }
 
-        $this->__warn(__METHOD__, "Classe non trovata : $class_name, using other classloaders ...");
+        Log::warn(__METHOD__, "Classe non trovata : $class_name, using other classloaders ...");
         
     }
 

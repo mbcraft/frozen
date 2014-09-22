@@ -98,7 +98,7 @@ class InterfaceLoader extends AbstractLoader
             return;
         }
 
-        $this->__warn(__METHOD__, "Interfaccia non trovata : $interface_name, using other interfaceloaders ...");
+        Log::warn(__METHOD__, "Interfaccia non trovata : $interface_name, using other interfaceloaders ...");
         
     }
 

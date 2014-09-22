@@ -30,7 +30,7 @@ Flash::write_error_messages();
     <? Form::on_failure("/admin/gallery/nuova_cartella.php") ?>
 
 </form>
-<?
+<?php
 end_admin_panel();
 }
 ?>

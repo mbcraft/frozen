@@ -126,8 +126,9 @@ Some sample modules are also provider.
 Roadmap :
 
 
-- remove dependency from BasicObject class
+- remove dependency from BasicObject class (done)
 - integrate a new logger class. 
+- evaluate composer integration
 
 
 Contacts :

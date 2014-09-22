@@ -123,11 +123,12 @@ Also various utilities are present in the framework/utilities folder.
 
 Some sample modules are also provider.
 
-Roadmap :
+Roadmap (sparse order) :
 
 
 - remove dependency from BasicObject class (done)
 - integrate a new logger class. 
+- evaluate development of classes to speedup accessible website development
 - evaluate composer integration
 
 

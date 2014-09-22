@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-abstract class __AbstractMysql extends BasicObject
+abstract class __AbstractMysql
 {
     const CONDITION_TYPE_EQUALS = "equals";
     const CONDITION_TYPE_NOT_EQUALS = "not_equals";

@@ -41,7 +41,7 @@ class __MysqlInsert extends __AbstractMysql
 
     function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlInsert");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlInsert");
         $result = mysql_query($this->sql());
         if (!$result) $this->__error(__METHOD__,"Errore nella query di insert : ".mysql_error());
         return $result;

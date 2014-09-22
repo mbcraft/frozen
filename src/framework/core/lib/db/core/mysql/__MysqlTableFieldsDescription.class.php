@@ -16,7 +16,7 @@ class __MysqlTableFieldsDescription extends __AbstractMysql
 
     protected function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query.");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query.");
 
         $result = mysql_query($this->sql);
         if ($result)

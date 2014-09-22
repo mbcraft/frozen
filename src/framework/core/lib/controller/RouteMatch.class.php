@@ -4,7 +4,7 @@
 /*
  * Questa classe contiene i dati che hanno fatto match per il routing di una richiesta.
  */
-class RouteMatch extends BasicObject
+class RouteMatch
 {
     private $controller;
     private $action;

@@ -8,7 +8,7 @@
 
 
 
-class BlockFactory extends BasicObject
+class BlockFactory
 {
     public static function create($name,$params)
     {

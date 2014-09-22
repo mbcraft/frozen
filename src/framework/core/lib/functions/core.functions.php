@@ -1,6 +1,5 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
-require_once("framework/core/lib/base/BasicObject.class.php");
 require_once("framework/core/lib/utils/DataHolder.class.php");
 
 /*

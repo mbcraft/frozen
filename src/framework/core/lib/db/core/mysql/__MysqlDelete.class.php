@@ -17,7 +17,7 @@ class __MysqlDelete extends __AbstractMysql
 
     function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlDelete");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlDelete");
 
         return mysql_query($this->sql());
     }

@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class DB extends BasicObject
+class DB
 {
     private static $initialized = false;
     private static $instance;

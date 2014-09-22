@@ -9,7 +9,7 @@
 
 
 
-abstract class AbstractController extends BasicObject implements IController
+abstract class AbstractController implements IController
 {
 
 }

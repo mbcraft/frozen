@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class LayoutFactory extends BasicObject 
+class LayoutFactory
 {    
     public static function create($name,$data)
     {

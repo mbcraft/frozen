@@ -11,7 +11,7 @@ function end_snippet()
     Snippet::end();
 }
 
-class PageFactory extends BasicObject
+class PageFactory
 {
     private static $pages = array();
 

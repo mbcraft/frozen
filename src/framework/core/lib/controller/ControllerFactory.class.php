@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class ControllerFactory extends BasicObject
+class ControllerFactory
 {
     const CONTROLLER_NAME_SUFFIX = "Controller";
 

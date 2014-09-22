@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class Cookie extends BasicObject
+class Cookie
 {
     const DEFAULT_PATH = "/";
 

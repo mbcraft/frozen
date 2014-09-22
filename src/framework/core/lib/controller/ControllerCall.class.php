@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class ControllerCall extends BasicObject
+class ControllerCall
 {
     private $controller = null;
     private $action = null;
@@ -69,14 +69,14 @@ class ControllerCall extends BasicObject
     private function __check_reserved_action($action)
     {
         if (strpos($action, "__")===0) {
-            $this->__error(__METHOD__, "Tentativo di invocare una action con un nome riservato ($action).Formato : ".$this->format);
+            Log::error(__METHOD__, "Tentativo di invocare una action con un nome riservato ($action).Formato : ".$this->format);
         }
     }
 
     private function __check_protected_action($action,$format)
     {
         if (strpos($action, "__")!==0 && strpos($action, "_")===0) {
-            $this->__error(__METHOD__, "Tentativo di invocare una action protetta ($action).Formato : ".$format);
+            Log::error(__METHOD__, "Tentativo di invocare una action protetta ($action).Formato : ".$format);
         }
     }
 

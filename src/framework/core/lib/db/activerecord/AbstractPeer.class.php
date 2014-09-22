@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-abstract class AbstractPeer extends BasicObject implements InitializeAfterLoad
+abstract class AbstractPeer implements InitializeAfterLoad
 {
     const CHECK_PREFIX = "__check_";
 
@@ -385,7 +385,7 @@ abstract class AbstractPeer extends BasicObject implements InitializeAfterLoad
         $method = str_replace("find_all_by_", "", $method);
         $field_list = explode("_AND_", $method);
 
-        if (count($args) != count($field_list)) $this->__error(__METHOD__,"Il numero dei campi non corrisponde : $original_method");
+        if (count($args) != count($field_list)) Log::error(__METHOD__,"Il numero dei campi non corrisponde : $original_method");
         $table = $this->__getMyTable();
         $raw_class_name = $this->__getRawClassName();
         $ss = DB::newSelect($table);

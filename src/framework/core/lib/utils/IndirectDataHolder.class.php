@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class IndirectDataHolder extends BasicObject
+class IndirectDataHolder
 {
     private $__dataHolder=null;
 
@@ -22,7 +22,7 @@ class IndirectDataHolder extends BasicObject
 
     public final function __check_data_holder()
     {
-        if ($this->__dataHolder==null) $this->__error(__METHOD__, "Data holder non impostato!");
+        if ($this->__dataHolder==null) Log::error(__METHOD__, "Data holder non impostato!");
     }
 
     /**

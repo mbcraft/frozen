@@ -92,7 +92,7 @@ class InterfaceLoader extends AbstractLoader
             {
                 $eval_string = $interface_name."::".self::CLASS_AFTER_LOAD_METHOD."('$interface_name');";
                 eval($eval_string);
-                $this->__info(__METHOD__, "Interface $interface_name initialized after loading.");
+                Log::info(__METHOD__, "Interface $interface_name initialized after loading.");
             }
             $loaded = true;
             return;

@@ -17,8 +17,6 @@ GREATER_THAN,GREATER_THAN_OR_EQUAL,MATCH_AGAINST,IN,NOT_IN
 
 - Query sql diretta
 
-- Unica dipendenza da BasicObject
-
 - Controllo x auto-esecuzione lettura descrizione tabella e database
 
 *** TODO ***

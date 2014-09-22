@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class Widget extends BasicObject
+class Widget
 {
     function open_fixed_width($css_class)
     {

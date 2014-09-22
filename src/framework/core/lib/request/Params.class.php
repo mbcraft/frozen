@@ -17,7 +17,7 @@
  * effettuate internamente tramite call.
  *
  * */
-class Params extends BasicObject
+class Params
 {
     private $loaded = false;
     private $params = array();

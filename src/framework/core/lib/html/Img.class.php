@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class Img extends BasicObject
+class Img
 {
     public static function animated($base_images_path,$alt_text)
     {

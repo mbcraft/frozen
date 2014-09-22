@@ -5,7 +5,7 @@
  * Contiene l'elenco dei mapping tag -> classe da istanziare durante la costruzione dell'albero.
  */
 
-class XMLObjectFactory extends BasicObject
+class XMLObjectFactory
 {
     private $mappings = array();
 

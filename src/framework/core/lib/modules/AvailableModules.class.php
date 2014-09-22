@@ -5,7 +5,7 @@
  * Classe per ispezionare i moduli disponibili nella cartella dei moduli.
  */
 
-class AvailableModules extends BasicObject
+class AvailableModules
 {
     const MODULE_DEFINITION_FILE = "module.xml";
 

@@ -34,7 +34,7 @@ function is_debug()
     return false;
 }
 
-class Config extends BasicObject
+class Config
 {
     private static $initialized = false;
     private static $instance;

@@ -87,7 +87,7 @@ class ClassLoader extends AbstractLoader
             {
                 $eval_string = $class_name."::".self::CLASS_AFTER_LOAD_METHOD."('$class_name');";
                 eval($eval_string);
-                $this->__info(__METHOD__, "Class $class_name initialized after loading.");
+                Log::info(__METHOD__, "Class $class_name initialized after loading.");
             }
             $loaded = true;
             return;

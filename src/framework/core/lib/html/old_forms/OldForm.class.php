@@ -1,6 +1,6 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
-class OldForm extends BasicObject
+class OldForm
 {
     private static $forms = array();
     public static $current_form = null;

@@ -5,7 +5,7 @@
  * Classe astratta comune per tutti i data object.
  * Mantiene traccia dei campi modificati.
  */
-abstract class AbstractDO extends BasicObject implements InitializeAfterLoad
+abstract class AbstractDO implements InitializeAfterLoad
 {
     const CLASS_FIELD_KEY = "___class";
     
@@ -105,7 +105,7 @@ abstract class AbstractDO extends BasicObject implements InitializeAfterLoad
             }
         }
         else
-            $this->__error(__METHOD__,"Impossibile modificare il campo $key col valore $value : campo non dichiarato nella tabella.");
+            Log::error(__METHOD__,"Impossibile modificare il campo $key col valore $value : campo non dichiarato nella tabella.");
     }
 
     public function __isset($key)
@@ -126,7 +126,7 @@ abstract class AbstractDO extends BasicObject implements InitializeAfterLoad
             return $this->__fieldsSet[$key];
         }
         else
-            $this->__error(__METHOD__,"Impossibile ritornare il campo $key : campo non dichiarato.");
+            Log::error(__METHOD__,"Impossibile ritornare il campo $key : campo non dichiarato.");
 
     }
 

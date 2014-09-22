@@ -120,7 +120,7 @@ class RouteDefinition
             return new RouteMatch($controller, $action, $format);
 
         }
-        else $this->__error("getMatch","Errore nella funzione di match della definizione.");
+        else Log::error("getMatch","Errore nella funzione di match della definizione.");
     }
 
     function matches($request_uri)

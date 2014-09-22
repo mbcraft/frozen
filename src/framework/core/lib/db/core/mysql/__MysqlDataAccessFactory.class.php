@@ -10,7 +10,7 @@
  *
  */
 
-class __MysqlDataAccessFactory extends BasicObject implements __DataAccessFactory
+class __MysqlDataAccessFactory implements __DataAccessFactory
 {
     private $connectionOpened = false;
     private $persistentConnection;
@@ -30,14 +30,14 @@ class __MysqlDataAccessFactory extends BasicObject implements __DataAccessFactor
 
         if (!$result_conn)
         {
-            $this->__error(__METHOD__,"Impossibile effettuare il collegamento al database.");
+            Log::error(__METHOD__,"Impossibile effettuare il collegamento al database.");
             return;
         }
         $this->persistentConnection = $db_persistent_connection;
         $result_select_db = mysql_select_db($db_name);
         if (!$result_select_db)
         {
-            $this->__error(__METHOD__,"Impossibile selezionare il database corretto.");
+            Log::error(__METHOD__,"Impossibile selezionare il database corretto.");
             return;
         }
         

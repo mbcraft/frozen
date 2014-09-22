@@ -2,7 +2,7 @@
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
 
-class XMLBuilder extends BasicObject
+class XMLBuilder
 {
     private $doc;
 

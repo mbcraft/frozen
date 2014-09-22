@@ -2,7 +2,7 @@
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
 
-class Block extends BasicObject implements IRenderable,IDumpable
+class Block implements IRenderable,IDumpable
 {
     const MARKER_KEY = "___block";
     

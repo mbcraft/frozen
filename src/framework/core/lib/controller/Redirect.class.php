@@ -1,7 +1,7 @@
 <?php
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class Redirect extends BasicObject implements IActionCommand
+class Redirect implements IActionCommand
 {
     private static $redirects = array();
 

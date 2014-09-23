@@ -18,12 +18,13 @@ class AllTests extends TestSuite
 {
     function AllTests()
     {
-        $is_local = isset(Config::instance()->TEST_DB_ENABLED) && Config::instance()->TEST_DB_ENABLED;
+        $is_local = isset(Config::instance()->TEST_DB_HOST);
         
         $this->TestSuite('All tests');
 
-        //$test_list = array("images","request","env","base","modules","pages","controller","html","services","io","session","xml","utils");
         $test_list = array("images","request","env","base","modules","pages","controller","services","io","session","xml","utils");
+        
+        
         
         foreach ($test_list as $test_group_name)
             $this->{$test_group_name."Tests"}();

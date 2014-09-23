@@ -1,6 +1,13 @@
 <?php
-/* This software is released under the BSD license. Full text at project root -> license.txt */
-
+/*
+ * NOTA DI COPYRIGHT
+Questo framework è esclusiva proprietà di Frostlab gate. Ne è vietato l'utilizzo, la copia, la modifica o la redistribuzione 
+sotto qualsiasi forma senza l'esplicito consenso da parte di Frostlab gate. Tutti i diritti riservati.
+ *
+ * COPYRIGHT NOTICE
+This framework is exclusive property of Frostlab gate. Usage, copy, changes or redistribution in any form are forbidden
+without an explicit agreement with Frostlab gate. All rights reserved.
+ */
 
 require_once("../../init.php");
 require_once("../lib/simpletest/autorun.php");
@@ -15,10 +22,8 @@ class AllTests extends TestSuite
         
         $this->TestSuite('All tests');
 
-        $test_list = array("images","request","env","base","modules","pages","controller","html","services","io","session","xml","utils");
-
-        if (isset(Config::instance()->TEST_DB_NAME))
-            array_push ($test_list, "db");
+        //$test_list = array("images","request","env","base","modules","pages","controller","html","services","io","session","xml","utils");
+        $test_list = array("images","request","env","base","modules","pages","controller","services","io","session","xml","utils");
         
         foreach ($test_list as $test_group_name)
             $this->{$test_group_name."Tests"}();
@@ -232,6 +237,7 @@ class AllTests extends TestSuite
         $utils_tests->addFile(TEST_ROOT.'utils/array_utils_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/tree_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/string_utils_test.php');
+
         $utils_tests->addFile(TEST_ROOT.'utils/datetime_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/system_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/fgarchive_test.php');

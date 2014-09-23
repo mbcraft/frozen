@@ -1,6 +1,13 @@
 <?php
-/* This software is released under the BSD license. Full text at project root -> license.txt */
-
+/*
+ * NOTA DI COPYRIGHT
+Questo framework è esclusiva proprietà di Frostlab gate. Ne è vietato l'utilizzo, la copia, la modifica o la redistribuzione 
+sotto qualsiasi forma senza l'esplicito consenso da parte di Frostlab gate. Tutti i diritti riservati.
+ *
+ * COPYRIGHT NOTICE
+This framework is exclusive property of Frostlab gate. Usage, copy, changes or redistribution in any form are forbidden
+without an explicit agreement with Frostlab gate. All rights reserved.
+ */
 
 class TestCoreDb extends UnitTestCase
 {
@@ -14,7 +21,7 @@ class TestCoreDb extends UnitTestCase
 
     public function setUp()
     {
-        DB::openConnection(Config::instance()->TEST_DB_NAME, Config::instance()->TEST_DB_HOST, Config::instance()->TEST_DB_USERNAME, Config::instance()->TEST_DB_PASSWORD, false);
+        DB::openConnection(Config::instance()->TEST_DB_NAME, "localhost", Config::instance()->TEST_DB_USERNAME, Config::instance()->TEST_DB_PASSWORD, false);
     }
 
     public function tearDown()
@@ -155,7 +162,7 @@ END_OF_DATA;
 
         $table_description = new __MysqlTableStatus("impiegati");
 
-        $this->assertTrue($table_description->getEngine()=="MyISAM" || $table_description->getEngine()=="InnoDB","L'engine non corrisponde!! : ".$table_description->getEngine());
+        $this->assertTrue($table_description->getEngine()=="MyISAM" || $table_description->getEngine()=="InnoDB","L'engine non corrisponde!!");
         $this->assertEqual($table_description->getName(),"impiegati","Il nome della tabella non corrisponde!!");
         $this->assertEqual($table_description->getRows(),2,"Il numero di righe non corrisponde!!");
         $this->assertEqual($table_description->getAutoIncrement(),7,"Il numero di righe non corrisponde!!");

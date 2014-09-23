@@ -1,5 +1,4 @@
 <?php
-/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 class TestModuleArchiver extends UnitTestCase
 {
@@ -34,10 +33,7 @@ class TestModuleArchiver extends UnitTestCase
         ModuleUtils::set_modules_path("/".FRAMEWORK_CORE_PATH."tests/modules/fakeroot2/modules/");
         
         ModuleArchiver::save_as_archive("test", "category");
-
-        $dd = new Dir("/".FRAMEWORK_CORE_PATH."tests/modules/fakeroot2/modules_out/");
-        $dd->touch();
-
+        
         ModuleUtils::set_modules_path("/".FRAMEWORK_CORE_PATH."tests/modules/fakeroot2/modules_out/");
         
         ModuleArchiver::extract_from_archive("test__category-1_2_3.fga");

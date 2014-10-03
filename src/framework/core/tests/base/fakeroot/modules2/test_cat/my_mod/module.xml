@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="2" minor="1" rev="7">
+
+    <description>Modulo di categoria test_cat di my_mod.</description>
+
+    <version-history>
+        <version major="2" minor="0" rev="0">
+            Bugfix del 20/10/2011
+        </version>
+    </version-history>
+
+    <actions>
+        <action name="install">
+
+        </action>
+
+        <action name="uninstall">
+
+
+        </action>
+    </actions>
+
+</module-declaration>

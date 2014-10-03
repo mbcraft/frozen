@@ -1,0 +1,14 @@
+
+Layer active record per l'accesso ai dati.
+
+*** FEATURES ***
+
+Layer ActiveRecord con : lettura dei dati da database su SINGOLA tabella, query con condizioni, limiti, ordinamento sui dati.
+Aggiornamento dei dati modificati, eliminazioni e inserimenti tramite pattern ActiveRecord.
+
+Layer DB con :  generazione di query MySQL per letture, inserimenti, cancellazioni ed eliminazioni.
+Informazioni sulle tabelle disponibili e sui campi disponibili per singola tabella.
+
+*** TODO ***
+
+Effettuare il mapping di associazioni 1-1, 1-n, m-n, la validazione sui dati.

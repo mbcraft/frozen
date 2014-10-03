@@ -1,0 +1,1 @@
+<input type="text" id="<?=$id ?>" name="<?=$key ?>" size="<?=$length ?>" value="<?= $value!==null ? $value : "" ?>" />

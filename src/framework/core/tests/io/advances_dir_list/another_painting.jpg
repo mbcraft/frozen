@@ -1,0 +1,17 @@
+<?php
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ * Description of another_painting
+ *
+ * @author marco
+ */
+class another_painting {
+    //put your code here
+}
+
+?>

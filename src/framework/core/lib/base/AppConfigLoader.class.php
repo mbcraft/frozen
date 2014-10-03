@@ -1,8 +1,8 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-require_once(FRAMEWORK_CORE_PATH."/lib/request/Host.class.php");
+require_once("framework/core/lib/request/Host.class.php");
 
 class AppConfigLoader extends AbstractLoader
 {

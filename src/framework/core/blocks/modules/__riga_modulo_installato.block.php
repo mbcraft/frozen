@@ -48,7 +48,7 @@ if (isset($additional))
     <td>
         <div class="module_command_list">
         <?php
-        $commands = InstalledModules::get_all_available_actions($nome_categoria,$nome_modulo);
+        $commands = InstalledModules::get_all_available_actions($nome_categoria,$nome_modulo);;
 
         foreach ($commands as $cmd)
             if ($cmd!="install" && $cmd!="uninstall")

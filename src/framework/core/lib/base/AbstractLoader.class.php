@@ -1,15 +1,15 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-require_once ("BasicObject.class.php");
+require_once ("Log.class.php");
 /**
  * Classe astratta utilizzata per i loader di risorse ricorsivi e non.
  *
  * @author marco.bagnaresi
  */
 
-abstract class AbstractLoader extends BasicObject
+abstract class AbstractLoader
 {
     const COLLISION_MODE_KEEP_ORIGINAL = "keep_original";
     const COLLISION_MODE_OVERWRITE = "overwrite";
@@ -62,7 +62,7 @@ abstract class AbstractLoader extends BasicObject
             return $this->elements[$name];
         }
         else
-            $this->__error(__METHOD__, $this->ELEMENT_NAME." non trovato : $name .");
+            Log::error(__METHOD__, $this->ELEMENT_NAME." non trovato : $name .");
     }
 
     public final function scan_from_site_root($dir)
@@ -90,7 +90,7 @@ abstract class AbstractLoader extends BasicObject
 
         if (!is_dir($root_path.$dir))
         {
-            $this->__warn(__METHOD__, "La directory ".$root_path.$dir." non e' una directory valida ... skip ...");
+            Log::warn(__METHOD__, "La directory ".$root_path.$dir." non e' una directory valida ... skip ...");
             return;
         }
         //IMPORTANTE SCANDIR DEVE RITORNARE IN ORDINE ALFABETICO!!! Default = 0 -> OK
@@ -159,7 +159,7 @@ abstract class AbstractLoader extends BasicObject
             $mode = $this->collision_detected($element_key,$path,$this->get_element_path_by_name($element_key));
         
         if ($mode==self::COLLISION_MODE_ERROR)
-            $this->__error(__METHOD__, "Collisione di nomi : $element_key 1:".$this->elements[$element_key]." 2:".$path);
+            Log::error(__METHOD__, "Collisione di nomi : $element_key 1:".$this->elements[$element_key]." 2:".$path);
         
         if ($mode==self::COLLISION_MODE_KEEP_ORIGINAL)
                 return;
@@ -169,7 +169,7 @@ abstract class AbstractLoader extends BasicObject
             $path_without_starting_slash =  substr($path,1);
             $this->elements[$element_key] = $path_without_starting_slash; //rimuovo la barra davanti, così facilito gli include e i require.
             if (Log::$debug)
-                $this->__debug(__METHOD__, $this->ELEMENT_NAME." found : $element_key : $path_without_starting_slash .");
+                Log::debug(__METHOD__, $this->ELEMENT_NAME." found : $element_key : $path_without_starting_slash .");
             $this->element_found($element_key);
             return;
         }

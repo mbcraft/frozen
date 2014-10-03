@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 class ModuleUtils
 {
@@ -10,12 +10,12 @@ class ModuleUtils
 
     const FRAMEWORK_CATEGORY_NAME = "framework";
     const FRAMEWORK_MODULE_NAME = "core";
-    
-    const MODULE_INSTALL_DIR = "/install/modules";
+
+    const SECONDARY_MODULES_PATH = "/include/modules/";
 
     public static $framework_core_path = FRAMEWORK_CORE_PATH;
     public static $modules_path = FRAMEWORK_MODULES_PATH;
-    
+
     static function get_framework_core_path()
     {
         return self::$framework_core_path;
@@ -52,14 +52,7 @@ class ModuleUtils
     {
         $module_path = AvailableModules::get_available_module_path($nome_categoria,$nome_modulo);
         $module_dir = new Dir($module_path);
-        $mp = new ModulePlug($module_dir);
-        
-        $install_dir = new Dir(self::MODULE_INSTALL_DIR);
-        if (!$install_dir->exists()) $install_dir->touch();
-        
-        //$mp->setRootDir($install_dir);
-        
-        return $mp;
+        return new ModulePlug($module_dir);
     }
 
     static function validate_module($nome_categoria,$nome_modulo)

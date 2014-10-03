@@ -1,7 +1,7 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class ControllerCall extends BasicObject
+class ControllerCall
 {
     private $controller = null;
     private $action = null;
@@ -69,14 +69,14 @@ class ControllerCall extends BasicObject
     private function __check_reserved_action($action)
     {
         if (strpos($action, "__")===0) {
-            $this->__error(__METHOD__, "Tentativo di invocare una action con un nome riservato ($action).Formato : ".$this->format);
+            Log::error(__METHOD__, "Tentativo di invocare una action con un nome riservato ($action).Formato : ".$this->format);
         }
     }
 
     private function __check_protected_action($action,$format)
     {
         if (strpos($action, "__")!==0 && strpos($action, "_")===0) {
-            $this->__error(__METHOD__, "Tentativo di invocare una action protetta ($action).Formato : ".$format);
+            Log::error(__METHOD__, "Tentativo di invocare una action protetta ($action).Formato : ".$format);
         }
     }
 
@@ -156,7 +156,7 @@ class ControllerCall extends BasicObject
                 //la action non ha dato risultati? invoco il metodo __action_result_null()
                 if ($tmp_result===null)
                 {
-                    $this->__warn("__dispatch_action", "The action result was null ...");
+                    Log::warn("__dispatch_action", "The action result was null ...");
                     $this->action_result_was_null = true;
                     $tmp_result = $this->__action_result_null();
                 }

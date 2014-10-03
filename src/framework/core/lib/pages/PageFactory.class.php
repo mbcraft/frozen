@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 function start_snippet($conditions)
 {
@@ -11,7 +11,7 @@ function end_snippet()
     Snippet::end();
 }
 
-class PageFactory extends BasicObject
+class PageFactory
 {
     private static $pages = array();
 

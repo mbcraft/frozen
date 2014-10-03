@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 class Html implements InitializeAfterLoad
 {
@@ -21,7 +21,7 @@ class Html implements InitializeAfterLoad
         PageData::instance()->set("/page/headers/comment_tags/list",array());
 
         $year = date("Y");
-        $copyright_string = "Copyright ".$year." (c) MBCRAFT di Marco Bagnaresi";
+        $copyright_string = "Copyright ".$year." (c) Frostlab Gate s.n.c.";
         PageData::instance()->set("/page/headers/page_copyright",array(Block::MARKER_KEY => "head/copyright","copyright_string" => $copyright_string,"year" => $year));
 
         self::set_layout("ajax");

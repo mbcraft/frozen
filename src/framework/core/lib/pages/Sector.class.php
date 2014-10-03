@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Rappresenta la sezione. Questa classe implementa la funzionalita' di storing dei contenuti all'interno

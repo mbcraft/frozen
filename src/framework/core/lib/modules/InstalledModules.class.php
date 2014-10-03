@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 function module_installed($nome_categoria,$nome_modulo)
 {
@@ -96,7 +96,7 @@ class InstalledModules
     {
         $storage = self::__get_xml_storage($nome_categoria,$nome_modulo);
 
-        $def = new ModuleDefinition($nome_categoria,$nome_modulo,$storage->readXML());
+        $def = new ModuleDefinition($nome_categoria,$nome_categoria,$storage->readXML());
 
         return $def->get_missing_required_modules($all_installed_modules);
     }
@@ -105,7 +105,7 @@ class InstalledModules
     {
         $storage = self::__get_xml_storage($nome_categoria,$nome_modulo);
 
-        $def = new ModuleDefinition($nome_categoria,$nome_modulo,$storage->readXML());
+        $def = new ModuleDefinition($nome_categoria,$nome_categoria,$storage->readXML());
 
         return $def->get_missing_required_services($all_provided_services);
 
@@ -144,11 +144,12 @@ class InstalledModules
      */
     static function get_installed_module_definition($nome_categoria,$nome_modulo)
     {
-        if (!InstalledModules::is_installed($nome_categoria, $nome_modulo)) throw new InvalidParametersException("Il modulo ".$nome_categoria."/".$nome_modulo." non risulta essere installato.");
+        if (!InstalledModules::is_installed($nome_categoria, $nome_modulo)) throw new InvalidParametersException();
         
-        $storage = self::__get_xml_storage($nome_categoria, $nome_modulo);
+        $mod_def_file = new File(AvailableModules::get_available_module_path($nome_categoria,$nome_modulo).AvailableModules::MODULE_DEFINITION_FILE);
+        $data = new SimpleXMLElement($mod_def_file->getContent());
         
-        return new ModuleDefinition($nome_categoria,$nome_modulo,$storage->readXML());
+        return new ModuleDefinition($nome_categoria,$nome_modulo,$data);
     }
 
     /*
@@ -156,7 +157,7 @@ class InstalledModules
      */
     public static function get_all_available_actions($nome_categoria,$nome_modulo)
     {
-        if (!InstalledModules::is_installed($nome_categoria, $nome_modulo)) throw new InvalidParametersException("Il modulo ".$nome_categoria."/".$nome_modulo." non risulta essere installato.");
+        if (!InstalledModules::is_installed($nome_categoria, $nome_modulo)) throw new InvalidParametersException();
          
         $def = self::get_installed_module_definition($nome_categoria,$nome_modulo);
 

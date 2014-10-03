@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Questa classe viene utilizzata per accedere ai parametri dei vari oggetti.
@@ -17,7 +17,7 @@
  * effettuate internamente tramite call.
  *
  * */
-class Params extends BasicObject
+class Params
 {
     private $loaded = false;
     private $params = array();

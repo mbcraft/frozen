@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /**
  * Description of DataHolder
@@ -16,7 +16,7 @@
  *
  * @author frostlabgate
  */
-class DataHolder extends BasicObject
+class DataHolder
 {
     private $__frozen;
 
@@ -100,7 +100,7 @@ class DataHolder extends BasicObject
     private function __check_null_values($key,$value)
     {
         if ($value===null && $this->__warn_for_null_values)
-            $this->__warn(__METHOD__,"Attenzione, variabile o costante impostata a null : KEY=$key .");
+            Log::warn(__METHOD__,"Attenzione, variabile o costante impostata a null : KEY=$key .");
     }
 
     private function __setConstant($key,$value)
@@ -108,7 +108,7 @@ class DataHolder extends BasicObject
         $this->__check_null_values($key, $value);
         if (array_key_exists($key, $this->__constants))
         {
-            $this->__error(__METHOD__,"Tentativo di modificare una costante gia' impostata nel file ".$this->__where[$key]." : KEY=$key VALUE=$value . File corrente : ".__FILE__);
+            Log::error(__METHOD__,"Tentativo di modificare una costante gia' impostata nel file ".$this->__where[$key]." : KEY=$key VALUE=$value . File corrente : ".__FILE__);
         }
         else
         {
@@ -129,7 +129,7 @@ class DataHolder extends BasicObject
         if ($this->__parentHolder!=null)
             return $this->__parentHolder->{$key};
         else
-            $this->__error(__METHOD__, "Costante nel DataHolder non trovata : $key");
+            Log::error(__METHOD__, "Costante nel DataHolder non trovata : $key");
         
     }
 
@@ -153,7 +153,7 @@ class DataHolder extends BasicObject
         if ($this->__parentHolder!=null)
             return $this->__parentHolder->{$key};
         else
-            $this->__error(__METHOD__, "Variabile nel DataHolder non trovata : $key");
+            Log::error(__METHOD__, "Variabile nel DataHolder non trovata : $key");
         
     }
 
@@ -180,9 +180,9 @@ class DataHolder extends BasicObject
 
     public function __unset($key)
     {
-        if ($this->__locked) $this->__error(__METHOD__, "Tentativo di unset di variabile o costante in DataHolder bloccato.");
-        if ($this->__is_constant($key)) $this->__error(__METHOD__, "Tentativo di eliminare una costante!");
-        $this->__info(__METHOD__,"Variabile eliminata : KEY=$key .");
+        if ($this->__locked) Log::error(__METHOD__, "Tentativo di unset di variabile o costante in DataHolder bloccato.");
+        if ($this->__is_constant($key)) Log::error(__METHOD__, "Tentativo di eliminare una costante!");
+        Log::info(__METHOD__,"Variabile eliminata : KEY=$key .");
         unset($this->__variables[$key]);
     }
 
@@ -196,14 +196,14 @@ class DataHolder extends BasicObject
     public function __set($key,$value)
     {
         if ($this->__frozen && $this->__isset($key)) return;
-        if ($this->__locked) $this->__error(__METHOD__, "Tentativo di scrittura di variabile o costante in DataHolder bloccato.");
+        if ($this->__locked) Log::error(__METHOD__, "Tentativo di scrittura di variabile o costante in DataHolder bloccato.");
         if ($this->__is_constant($key)) $this->__setConstant($key,$value);
         else $this->__setVariable($key,$value);
     }
 
     public final function __get_constants()
     {
-        if (!$this->__enable_constants) $this->__error(__METHOD__, "Impossibile ottenere le costanti : non supportate.");
+        if (!$this->__enable_constants) Log::error(__METHOD__, "Impossibile ottenere le costanti : non supportate.");
         else
             return $this->__constants;
     }

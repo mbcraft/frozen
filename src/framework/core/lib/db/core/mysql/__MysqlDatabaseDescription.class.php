@@ -1,7 +1,7 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class __MysqlDatabaseDescription extends BasicObject
+class __MysqlDatabaseDescription
 {
     private $all_tables = array();
 
@@ -9,7 +9,7 @@ class __MysqlDatabaseDescription extends BasicObject
 
     protected function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query.");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query.");
 
         $result = mysql_query("SHOW TABLES;");
 

@@ -1,6 +1,6 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
-class __MysqlQuery extends BasicObject
+/* This software is released under the BSD license. Full text at project root -> license.txt */
+class __MysqlQuery
 {
     private $sql;
     private $result;
@@ -12,7 +12,7 @@ class __MysqlQuery extends BasicObject
 
     function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlQuery");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlQuery");
 
         $pieces = explode(";",$this->sql);
         foreach ($pieces as $pq)

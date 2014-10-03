@@ -1,6 +1,6 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 
 require_once ("AbstractLoader.class.php");
@@ -64,7 +64,7 @@ class ClassLoader extends AbstractLoader
         self::$search_path = Config::instance()->CLASS_DIRS;
         
         $this->add_directory(DS.FRAMEWORK_CORE_PATH."lib".DS);        
-        $this->add_directory(ModuleUtils::MODULE_INSTALL_DIR."/lib/");
+        
         $this->add_directory("/lib/");
     }
 
@@ -87,13 +87,13 @@ class ClassLoader extends AbstractLoader
             {
                 $eval_string = $class_name."::".self::CLASS_AFTER_LOAD_METHOD."('$class_name');";
                 eval($eval_string);
-                $this->__info(__METHOD__, "Class $class_name initialized after loading.");
+                Log::info(__METHOD__, "Class $class_name initialized after loading.");
             }
             $loaded = true;
             return;
         }
 
-        $this->__warn(__METHOD__, "Classe non trovata : $class_name, using other classloaders ...");
+        Log::warn(__METHOD__, "Classe non trovata : $class_name, using other classloaders ...");
         
     }
 

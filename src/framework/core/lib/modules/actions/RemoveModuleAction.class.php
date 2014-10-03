@@ -1,4 +1,5 @@
 <?php
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
 * Rimuove tutti i file presenti all'interno di un modulo dalla root del sito

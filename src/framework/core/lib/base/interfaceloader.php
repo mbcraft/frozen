@@ -1,6 +1,6 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 
 require_once ("AbstractLoader.class.php");
@@ -57,7 +57,19 @@ class InterfaceLoader extends AbstractLoader
         self::$search_path = Config::instance()->INTERFACE_DIRS;
         
         $this->add_directory(DS.FRAMEWORK_CORE_PATH."lib".DS);        
-        $this->add_directory(ModuleUtils::MODULE_INSTALL_DIR."/lib/");
+        
+        /*
+        $installed_modules = InstalledModules::get_all_installed_modules();
+        
+        foreach ($installed_modules as $module)
+        {
+            extract($module["global"]);
+            
+            if ($nome_categoria!=ModuleUtils::FRAMEWORK_CATEGORY_NAME && $nome_modulo!=ModuleUtils::FRAMEWORK_MODULE_NAME)
+                $this->add_directory(DS.FRAMEWORK_MODULES_PATH.$module_dir.DS.$nome_categoria.DS.$nome_modulo.DS."lib".DS);
+        }
+         */
+
         $this->add_directory("/lib/");
     }
 
@@ -80,13 +92,13 @@ class InterfaceLoader extends AbstractLoader
             {
                 $eval_string = $interface_name."::".self::CLASS_AFTER_LOAD_METHOD."('$interface_name');";
                 eval($eval_string);
-                $this->__info(__METHOD__, "Interface $interface_name initialized after loading.");
+                Log::info(__METHOD__, "Interface $interface_name initialized after loading.");
             }
             $loaded = true;
             return;
         }
 
-        $this->__warn(__METHOD__, "Interfaccia non trovata : $interface_name, using other interfaceloaders ...");
+        Log::warn(__METHOD__, "Interfaccia non trovata : $interface_name, using other interfaceloaders ...");
         
     }
 

@@ -1,4 +1,5 @@
 <?php
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
 * Aggiunge i file prendendoli dal modulo nella cartella relativa alla root del sito

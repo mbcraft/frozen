@@ -1,11 +1,11 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Classe per ispezionare i moduli disponibili nella cartella dei moduli.
  */
 
-class AvailableModules extends BasicObject
+class AvailableModules
 {
     const MODULE_DEFINITION_FILE = "module.xml";
 
@@ -129,16 +129,14 @@ class AvailableModules extends BasicObject
      */
     static function is_module_available($nome_categoria,$nome_modulo)
     {
-        if ($nome_categoria===ModuleUtils::FRAMEWORK_CATEGORY_NAME && $nome_modulo===ModuleUtils::FRAMEWORK_MODULE_NAME)
-            return DS.ModuleUtils::get_framework_core_path();
+        $d = new Dir(DS.AvailableModules::get_available_module_path($nome_categoria, $nome_modulo));
 
-        //moduli primari
-        $module_dir = new Dir(DS.ModuleUtils::get_modules_path().$nome_categoria.DS.$nome_modulo.DS);
-        //ok aggiunto controllo su definizione del modulo
-        $module_def = new File($module_dir->getPath().self::MODULE_DEFINITION_FILE);
-        
-        if ($module_def->exists()) return true;
-        else return false;
+        $module_data = new File($d->getPath()."/".self::MODULE_DEFINITION_FILE);
+
+        if ($d->exists())
+            return true;
+        else 
+            return false;
     }
 
     static function get_available_module_definition($nome_categoria,$nome_modulo)

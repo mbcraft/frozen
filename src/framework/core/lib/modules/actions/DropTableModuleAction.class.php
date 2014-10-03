@@ -1,8 +1,9 @@
 <?php
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-            /*
-     * Droppa una tabella
-     * */
+/*
+ * Droppa una tabella
+ * */
 class DropTableModuleAction extends AbstractModuleAction
 {
     function setup($tag,$attributes)

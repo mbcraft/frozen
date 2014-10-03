@@ -1,5 +1,5 @@
 <?
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 require_once("../../../init.php");
 
 BrowserInfo::set_screen_width($_GET["screen_width"]);

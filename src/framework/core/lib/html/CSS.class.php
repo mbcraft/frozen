@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Questa classe serve per effettuare il caricamento di tutti i CSS della pagina all'interno dell'header.
@@ -41,13 +41,6 @@ class CSS
     
     }
     
-    private static function init_css_inline()
-    {
-        if (!PageData::instance()->is_set("/page/headers/required_css_elements"))
-            PageData::instance()->set("/page/headers/required_css_elements",array(Block::MARKER_KEY => "head/required_css_elements","css_element_list" => array()));
-    
-    }
-    
     public static function get_loaded_css()
     {
         return count(self::$css_elements);
@@ -58,16 +51,6 @@ class CSS
         self::require_css_file("/framework/core/css/debug.css");
     }
 
-    public static function require_css_inline($css_text,$media = CSS::MEDIA_ALL)
-    {
-        self::init_css_inline();
-        if (!ArrayUtils::has_value(self::$css_elements,$css_text))
-        {
-            self::$css_elements[] = $css_text;
-            PageData::instance()->add("/page/headers/required_css_elements/css_element_list",array("text" => $css_text,"media" => $media));
-        }
-    }
-    
     public static function require_css($css_path,$media = CSS::MEDIA_ALL)
     {
         self::init_css();
@@ -79,12 +62,19 @@ class CSS
     }
 
     public static function require_css_file($file,$media = CSS::MEDIA_ALL)
-    {      
-        if (!$file instanceof File) throw new InvalidDataException("Il parametro non è di tipo file!!");
-        if (!$file->exists()) throw new IllegalStateException("Css non trovato!! : ".$file->getPath());
+    {
+        if ($file instanceof File)
+            $file_object = $file;
+        else
+            $file_object = new File($file);
+
+        if (!$file_object->exists())
+        {
+            throw new Exception("Css not found : ".$file);
+        }
         else
         {
-            $path_with_hash = $file->getPath()."?hash=".md5($file->getModificationTime());
+            $path_with_hash = $file_object->getPath()."?hash=".md5($file_object->getModificationTime());
             self::require_css($path_with_hash,$media);
         }
     }

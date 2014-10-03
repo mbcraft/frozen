@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  *
@@ -120,7 +120,7 @@ class RouteDefinition
             return new RouteMatch($controller, $action, $format);
 
         }
-        else $this->__error("getMatch","Errore nella funzione di match della definizione.");
+        else Log::error("getMatch","Errore nella funzione di match della definizione.");
     }
 
     function matches($request_uri)

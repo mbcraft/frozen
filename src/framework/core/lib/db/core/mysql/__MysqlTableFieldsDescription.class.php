@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 class __MysqlTableFieldsDescription extends __AbstractMysql
 {
@@ -16,7 +16,7 @@ class __MysqlTableFieldsDescription extends __AbstractMysql
 
     protected function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query.");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query.");
 
         $result = mysql_query($this->sql);
         if ($result)

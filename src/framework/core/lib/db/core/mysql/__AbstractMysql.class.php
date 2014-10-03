@@ -1,7 +1,7 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-abstract class __AbstractMysql extends BasicObject
+abstract class __AbstractMysql
 {
     const CONDITION_TYPE_EQUALS = "equals";
     const CONDITION_TYPE_NOT_EQUALS = "not_equals";

@@ -1,6 +1,6 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Effettua la chiamata ad un controller passando dei parametri e restituisce il risultato.
@@ -9,7 +9,7 @@
 
 
 
-abstract class AbstractController extends BasicObject implements IController
+abstract class AbstractController implements IController
 {
 
 }

@@ -1,6 +1,6 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
-class OldForm extends BasicObject
+/* This software is released under the BSD license. Full text at project root -> license.txt */
+class OldForm
 {
     private static $forms = array();
     public static $current_form = null;

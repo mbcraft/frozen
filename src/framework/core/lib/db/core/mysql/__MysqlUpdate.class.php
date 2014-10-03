@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 class __MysqlUpdate extends __AbstractMysql
 {
@@ -52,7 +52,7 @@ class __MysqlUpdate extends __AbstractMysql
 
     function exec()
     {
-        if (!DB::isConnectionOpen()) $this->__error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlUpdate");
+        if (!DB::isConnectionOpen()) Log::error(__METHOD__, "La connessione al database non e' aperta prima della query con MysqlUpdate");
 
         return mysql_query($this->sql());
     }

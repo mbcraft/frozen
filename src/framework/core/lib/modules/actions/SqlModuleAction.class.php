@@ -1,4 +1,5 @@
 <?php
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
 * Esegue un file sql se trovato

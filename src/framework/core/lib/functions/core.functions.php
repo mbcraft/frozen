@@ -1,7 +1,6 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
-require_once(FRAMEWORK_CORE_PATH."/lib/base/BasicObject.class.php");
-require_once(FRAMEWORK_CORE_PATH."/lib/utils/DataHolder.class.php");
+/* This software is released under the BSD license. Full text at project root -> license.txt */
+require_once("framework/core/lib/utils/DataHolder.class.php");
 
 /*
  * Funzione utilizzata per creare istanze con parametri nel costruttore (anche più di uno).

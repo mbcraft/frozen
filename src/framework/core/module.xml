@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <module-declaration major="3" minor="3" rev="4">
-    <description>Kernel del framework per la costruzione di siti/portali web</description>
+    <description>Kernel del framework per la costruzione di siti web</description>
     <version-history>
         <version major="3" minor="3" rev="4">
             Migliorata gestione moduli - Aggiunta generazione sitemap

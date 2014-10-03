@@ -1,1 +1,1 @@
-<meta name="author" content="Previous version by Frostlab gate and Pelloni Arte - Powered by MBCRAFT" >
+<meta name="author" content="Web engineering - Marco Bagnaresi, Web design/marketing - Michele Rispoli -- Frostlab Gate -- web@frostlab.it" >

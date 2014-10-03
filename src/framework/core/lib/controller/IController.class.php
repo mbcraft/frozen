@@ -1,6 +1,6 @@
 <?php
 
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
  * Interfaccia di markup usata per segnare tutti i controller e permettere la registrazione automatica del routing ...

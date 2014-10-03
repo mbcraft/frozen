@@ -1,5 +1,5 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /* 
  * Contiene le COSTANTI e le variabili di configurazione.
@@ -34,7 +34,7 @@ function is_debug()
     return false;
 }
 
-class Config extends BasicObject
+class Config
 {
     private static $initialized = false;
     private static $instance;

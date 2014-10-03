@@ -1,7 +1,7 @@
 <?php
 
- /* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
- class DataStorage extends Storage
+ /* This software is released under the BSD license. Full text at project root -> license.txt */
+class DataStorage extends Storage
  {
     function __construct($folder,$name)
     {

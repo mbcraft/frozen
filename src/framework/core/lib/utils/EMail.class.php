@@ -1,7 +1,7 @@
 <?php
-/* This software is released under the GPLv2 license. Full text at : http://www.gnu.org/licenses/gpl-2.0.html */
+/* This software is released under the BSD license. Full text at project root -> license.txt */
 
-class EMail extends BasicObject
+class EMail
 {
     const HTML_FORMAT = "HTML_FORMAT";
     const TXT_FORMAT = "TXT_FORMAT";
@@ -105,7 +105,7 @@ class EMail extends BasicObject
 
         $result = @mail($this->to,$this->subject,$txt_message,$headers);
 
-        if (!$result) $this->__error(__METHOD__,"Si e' verificato un errore nell'invio della mail : TO=".$this->to." SUBJECT=".$this->subject.".");
+        if (!$result) Log::error(__METHOD__,"Si e' verificato un errore nell'invio della mail : TO=".$this->to." SUBJECT=".$this->subject.".");
 
     }
 
@@ -115,7 +115,7 @@ class EMail extends BasicObject
 
         $result = @mail($this->to,$this->subject,$html_message,$headers);
 
-        if (!$result) $this->__error(__METHOD__,"Si e' verificato un errore nell'invio della mail : TO=".$this->to." SUBJECT=".$this->subject.".");
+        if (!$result) Log::error(__METHOD__,"Si e' verificato un errore nell'invio della mail : TO=".$this->to." SUBJECT=".$this->subject.".");
     }
 
     public static function is_valid($email)

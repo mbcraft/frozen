@@ -1,1 +1,0 @@
-<textarea rows="<?=$rows ?>" cols="<?= $cols ?>" id="<?=$id ?>" name="<?=$name ?>"><?= $value!==null ? $value : "" ?></textarea>

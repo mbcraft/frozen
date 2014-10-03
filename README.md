@@ -66,8 +66,7 @@ A section is a definition of a variable. Variable are used inside layouts.
 
 -- module support : This framework has an installable/uninstallable module system, similar to
 Composer. Modules also have folders that are nested/removed from your project.
-The main difference from Composer (but i'm not an expert, this framework
-was created before Composer i think) is that in Composer all things goes
+The main difference from Composer (as far as i know) is that in Composer all files goes
 to '/vendor'. In Frozen (previously Charme-Crabs), files and folders are added and removed from/to
 the root project. All modules has a module.xml inside that defines its 
 install/uninstall behaviour.
@@ -127,7 +126,7 @@ Roadmap (sparse order) :
 
 
 - remove dependency from BasicObject class (done)
-- integrate a new logger class. 
+- integrate a new logger class. (work in progress) 
 - evaluate development of classes to speedup accessible website development
 - evaluate composer integration
 

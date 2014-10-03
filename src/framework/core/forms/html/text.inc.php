@@ -1,1 +1,0 @@
-<input type="text" id="<?=$id ?>" name="<?=$name ?>" size="<?=$length ?>" value="<?= $value!==null ? $value : "" ?>" />

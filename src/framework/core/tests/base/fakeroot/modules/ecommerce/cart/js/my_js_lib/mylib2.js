@@ -1,4 +1,0 @@
-function myjsLib2()
-{
-    
-}

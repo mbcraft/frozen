@@ -130,6 +130,13 @@ Roadmap (sparse order) :
 - evaluate development of classes to speedup accessible website development
 - evaluate composer integration
 
+Demos :
+
+There is a working demo inside the 'demos' directory.
+You can find installation instructions in the 'setup' folder, with the
+database data dump needed to make it work. It is a website featuring
+some modules for showing products (real images were replaced) and using
+some layouts. Superadmin is also working.
 
 Contacts :
 

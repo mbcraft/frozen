@@ -48,7 +48,9 @@ To access the module install/uninstall pages, point your browser to :
 
 http://frozen_sss/frozen/
 
-A code is requested, and behaviour is set in class SuperAdminUtils wich must be implemented and saved in lib as 'SuperAdminUtils.class.php'.
+The secret code is 'frzadmin'.
+
+A code is requested, and behaviour is set in class SuperAdminUtils which must be implemented and saved in lib folder or subfolder as 'SuperAdminUtils.class.php'.
 It has three methods : 
 is_logged - checks session if user is logged, returning true or false
 check_login - checks login code and returns true if correct, false otherwise 
@@ -64,5 +66,6 @@ ecc ...
 
 Modules always has 'install' and 'uninstall' commands, but can also have custom commands, eg. for creating tables or do other tasks as requested.
 
+Module specification is in /framework/modules/module.rnc .
 
 **********************************************

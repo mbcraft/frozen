@@ -1,0 +1,90 @@
+.citazione
+{
+    position:absolute;
+    z-index: 5;
+    width:295px;
+    top : 47%;
+    left: 30px;
+    font-family: Arial, Helvetica, Serif;
+    font-size: 20px;
+    font-weight: normal;
+    color:#fff;
+}
+
+.firma_autore
+{
+    font-style: italic;
+    text-align: right;
+    width:235px;
+}
+.entra
+{
+    color : #333;
+    background-color: #4537ff;
+    width : 90%;
+    line-height: 35px;
+    padding-right : 15px;
+    margin-top : 30px;
+    margin-right : 30px;
+}
+
+.entra:hover
+{
+    color : #c4aa82;
+    background-color: #3426ee;
+    width : 90%;
+    line-height: 35px;
+    padding-right : 15px;
+    margin-top : 30px;
+    margin-right : 30px;
+    cursor: pointer;
+}
+
+.entra a:hover
+{
+    text-decoration: underline;
+}
+.credits
+{
+    position:absolute;
+    bottom:0;
+    font-family: Arial, Helvetica, Serif;
+    height : 20px;
+    background-color: #fff;
+    z-index:10;
+    width: 100%;
+}
+
+body
+{
+    margin: 0;
+    overflow:hidden;
+}
+.dati_azienda
+{
+    width:300px;
+    font-family:Arial, Helvetica, Serif;
+    position:absolute;
+    z-index:12;
+    color:#333;
+    bottom:60px;
+    right:40px;
+    text-align: right;
+    height:70px;
+}
+
+.overtable 
+{
+    position:absolute; 
+    z-index:10; 
+    top:0; 
+    left:0; 
+    height:100%;
+}
+.antie 
+{
+    position:absolute; 
+    z-index:1; 
+    top:-20%; 
+    left:0; 
+}

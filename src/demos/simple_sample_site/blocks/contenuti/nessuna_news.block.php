@@ -1,0 +1,1 @@
+<h2>Non sono presenti news.</h2>

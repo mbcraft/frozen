@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
-<module-declaration major="1" minor="0" rev="2" xmlns="http://www.frostlab.it/schemas/2011/module.xsd">
+<module-declaration major="1" minor="0" rev="2" xmlns="http://www.mbcraft.it/schemas/2011/module.rnc">
     <description>Libreria per l'interfacciamento con facebook</description>
     <version-history>
         <version major="1" minor="0" rev="2">

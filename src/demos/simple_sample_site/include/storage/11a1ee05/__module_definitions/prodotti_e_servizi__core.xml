@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="1" rev="0">
+    <description>Gestione di prodotti/servizi generici.</description>
+    <version-history>
+        <version major="1" minor="1" rev="0">
+            Versione con supporto alle immagini per il prodotto + descrizione html + prezzo.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base.
+        </version>
+    </version-history>
+    <actions>
+        <action name="create_tables">
+
+            <!-- Tabella prodotti -->
+            <create_or_update_table_fields table_name="tab_prodotti_servizi">
+                <autoincrement_id name="id_prodotto_servizio"/>
+                <text_128 name="nome" null="false" comment="nome del prodotto/servizio"/>
+                <text_65k name="descrizione" null="false" comment="descrizione"/>
+                <text_512 name="link_sito_produttore" null="true" comment="link sito produttore"/>
+                <double name="prezzo_iva_esclusa" null="true" comment="prezzo iva esclusa"/>
+            </create_or_update_table_fields>
+
+            <!-- Tabella con le immagini dei prodotti -->
+            <create_or_update_table_fields table_name="tab_immagini_prodotti_servizi">
+                <autoincrement_id name="id_immagine_prodotto_servizio"/>
+                <external_id name="id_prodotto_servizio" null="false" refers_to="tab_prodotti_servizi" comment="id del prodotto a cui agganciare l'immagine"/>
+                <text_128 name="nome_immagine" null="false" comment="percorso dell'immagine"/>
+            </create_or_update_table_fields>
+
+            <create_or_update_do name="ProdottoServizio" table_name="tab_prodotti_servizi" location="/lib/prodotti_servizi/db"/>
+            <create_or_update_do name="ImmagineProdottoServizio" table_name="tab_immagini_prodotti_servizi" location="/lib/prodotti_servizi/db"/>
+
+        </action>
+
+        <action name="drop_tables">
+            <drop_table table_name="tab_prodotti_servizi"/>
+            <drop_table table_name="tab_immagini_prodotti_servizi"/>
+
+            <drop_do name="ProdottoServizio" location="/lib/prodotti_servizi/db"/>
+            <drop_do name="ImmagineProdottoServizio" location="/lib/prodotti_servizi/db"/>
+        </action>
+
+        <action name="install">
+            <add relative_path="blocks/"/>
+            <add relative_path="lib/"/>
+            <add relative_path="include/"/>
+            <add relative_path="contenuti/"/>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/"/>
+            <remove relative_path="lib/"/>
+            <remove relative_path="include/"/>
+            <remove relative_path="contenuti/"/>
+        </action>
+    </actions>
+
+    <required-modules>
+        <module name="editors/tiny_mce"/>
+    </required-modules>
+
+</module-declaration>

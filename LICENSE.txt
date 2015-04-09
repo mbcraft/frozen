@@ -7,8 +7,6 @@ http://www.stackoverflow.com
 ... and to Michele Rispoli and Stefano Pelloni for contributing with
 their advices. 
 
-Some parts (will be) generously provided by BidToTrip Ltd.
-
 Some modules contains third party software. They have their own licenses.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:

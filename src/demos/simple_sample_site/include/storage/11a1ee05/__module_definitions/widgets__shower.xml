@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="1" rev="0">
+    <description>Blocco per la visualizzazione di qualcosa in sovraimpressione.</description>
+    <version-history>
+        <version major="1" minor="1" rev="0">
+            Sistemati bug di visualizzazione. 
+            Testato su Ie 8-Firefox-Chrome-Safari
+            Aggiunto file css.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Prima versione
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/shower">
+            <description>Inserisce un riquadro per la visualizzazione di contenuti in sovraimpressione.</description>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/"/>
+            <add relative_path="immagini/"/>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/"/>
+            <remove relative_path="immagini/"/>
+        </action>
+    </actions>
+
+</module-declaration>

@@ -23,7 +23,7 @@ class Dir extends __FileSystemElement
         
         if (substr($new_path,strlen($new_path)-1,1)!=DS) 
                 $new_path=$new_path.DS;
-
+       
         parent::__construct($new_path);
         
     }

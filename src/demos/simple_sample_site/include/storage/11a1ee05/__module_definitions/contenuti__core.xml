@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="2" rev="0">
+    <description>Insieme di blocchi riutilizzati per la gestione contenuti.</description>
+    <version-history>
+        <version major="1" minor="2" rev="0">
+            Versione revisionata di alcuni blocchi.
+        </version>
+    </version-history>
+
+    <required-modules>
+        <module name="admin/core"/>
+    </required-modules>
+
+    <available-blocks>
+
+
+        <block name="contenuti/form/field__chiave">
+            <description>Campo della form per la chiave</description>
+            <param name="chiave" type="string" required="true">La chiave</param>
+        </block>
+        <block name="contenuti/form/field__codice_lingua">
+            <description>Campo della form per il codice lingua</description>
+            <param name="chiave" type="string" required="true">La chiave</param>
+        </block>
+        <block name="contenuti/form/field__descrizione">
+            <description>Campo della form per la descrizione</description>
+            <param name="descrizione" type="string" required="true">La descrizione</param>
+        </block>
+        <block name="contenuti/form/field__id">
+            <description>Campo della form per l'id</description>
+            <param name="id" type="string" required="true">L'id</param>
+        </block>
+        <block name="contenuti/form/field__keywords">
+            <description>Campo della form per le keywords</description>
+            <param name="keywords" type="string" required="true">Le keywords</param>
+        </block>
+        <block name="contenuti/form/field__nome">
+            <description>Campo della form per il nome</description>
+            <param name="nome" type="string" required="true">Il nome</param>
+        </block>
+        <block name="contenuti/form/field__testo">
+            <description>Campo della form per il testo</description>
+            <param name="testo" type="string" required="true">Il testo</param>
+        </block>
+        <block name="contenuti/form/field__titolo">
+            <description>Campo della form per il titolo</description>
+            <param name="titolo" type="string" required="true">Il titolo</param>
+        </block>
+
+    </available-blocks>
+    
+    <actions>
+        <action name="install">
+            <add relative_path="blocks/"/>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/"/>
+        </action>    
+    </actions>
+
+
+</module-declaration>

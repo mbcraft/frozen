@@ -1,8 +1,14 @@
-<html>
-    <head>
-        <title>Frostlab gate framework utilities</title>
-    </head>
-    <body>
+<?php
+
+if (SuperAdminUtils::is_logged())
+{
+Html::set_title("Utilities di amministrazione del framework");
+Html::set_layout("admin_frozen");
+
+start_sector("/pannello_centrale");
+?>
+
+
         <ul>
             <li>
                 <a href="/framework/utilities/phpinfo.php">PHP INFO</a>
@@ -29,5 +35,12 @@
                 <a href="/framework/utilities/init_test_env.php">Inizializza l'ambiente di test.</a>
             </li>
         </ul>
-    </body>
-</html>
+
+<?php
+end_sector();
+
+} else {
+    header ("Location: /frozen/");
+}
+
+?>

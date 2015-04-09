@@ -1,0 +1,8 @@
+<?
+
+class ImmaginiDO extends AbstractDO
+{
+
+}
+
+?>

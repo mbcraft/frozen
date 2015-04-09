@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="0" rev="1">
+    <description>Editor html per contenuti testuali/ipertestuali.</description>
+    <version-history>
+        <version major="1" minor="0" rev="1">
+            Sistemato bug relativo a import js e nome parametro.
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base con relativo block.
+        </version>
+    </version-history>
+
+    <available-blocks>
+        <block name="widgets/html_editor">
+            <description>Editor html riutilizzabile</description>
+            <param name="htmleditor_field_name" type="string" required="false">Il campo della form su cui generare l'editor html, 'textarea_testo' se non specificato.</param>
+        </block>
+    </available-blocks>
+
+    <actions>
+        <action name="install">
+            <add relative_path="js/"/>
+            <add relative_path="blocks/"/>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="js/"/>
+            <remove relative_path="blocks/"/>
+        </action>
+    </actions>
+
+
+</module-declaration>

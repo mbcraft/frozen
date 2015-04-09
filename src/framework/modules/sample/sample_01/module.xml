@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<module-declaration major="1" minor="0" rev="0" show="false">
+    <description>Versione minimale della gestione utenti.</description>
+    <version-history>
+        <version major="1" minor="0" rev="0">
+            Modulo di prova di creazione tabelle.
+        </version>
+    </version-history>
+
+    <actions>
+        <!-- Azione utilizzata per l'installazione del modulo : name="install" -->
+        <action name="install">
+
+            <add relative_path="blocks/" /> <!-- aggancia la cartella 'blocks/' presente nel modulo -->
+
+            <mkdir relative_path="blog/" />
+            <extract relative_archive_path="files/blog_setup.fga" extract_to="blog/" />
+
+            <insert_row to="tab_utenti">    <!-- aggiunge dei record in una tabella -->
+                <field name="id_utente">1</field>
+                <field name="nome">Marco</field>
+                <field name="cognome">Bagnaresi</field>
+            </insert_row>
+
+            <delete_row from="tab_utenti" id="2" /> <!-- rimuove dei record da una tabella -->
+
+
+            <create_or_update_table_fields table_name="tab_messaggi">
+
+                <autoincrement_id name="id_messaggio" />
+
+            </create_or_update_table_fields>
+
+
+
+
+
+            <!-- crea una nuova tabella o ne modifica una già esistente -->
+            <create_or_update_table_fields table_name="tab_prova"> <!-- nome della tabella : tab_prova -->
+
+                <autoincrement_id name="id_account" /> <!-- Id incrementale per identificare l'entità -->
+
+                <text_32 name="username" null="false" />    <!-- campo di testo max 32 caratteri -->
+                <unique name="username" />  <!-- vincolo di unicità sul valore username -->
+
+                <text_64 name="md5_password" null="false" />    <!-- campo di testo max 64 caratteri -->
+                <text_128 name="email" null="true"  />  <!-- campo di testo max 128 caratteri -->
+                <text_512 name="remote_token" null="false" />   <!-- campo di testo max 512 caratteri -->
+                <text_65k name="descrizione" null="false" />    <!-- campo di testo molto lungo -->
+                <text_big name="testo" null="true" />   <!-- campo di testo lunghissimo -->
+                <fulltext name="testo" />   <!--  abilitazione della ricerca sul campo testo -->
+
+                <date name="data_iscrizione" null="true" /> <!-- solo data -->
+
+                <time name="ora_ultimo_accesso" null="false" /> <!-- solo ora -->
+                <datetime name="dataora_ultima_modifica" null="true" /> <!-- data e ora -->
+
+                <timestamp name="timestamp" null="true" />  <!-- misura di tempo in millisecondi -->
+
+                <double name="peso" null="false" rename_from="peso_hg"/> <!-- numero con la virgola, non vuoto, modifica dal campo peso_hg -->
+
+                <external_id name="id_collegamenti" null="false" /> <!-- link a id di entità in altra tabella -->
+
+                <unsigned_int_32 name="numero_vendite" null="false" />  <!-- valore positivo anche molto grande -->
+                <unsigned_int_8 name="tipologia_account" null="false" />    <!-- valore positivo non molto grande -->
+                <index name="tipologia_account" />  <!-- ottimizzazione ricerche per tipologia -->
+                <signed_int_32 name="feedback_totale" null="false" />   <!-- valore positivo o negativo, anche molto grande -->
+                <signed_int_8 name="feedback_parziale" null="false" />  <!-- valore positivo o negativo, non molto grande -->
+
+                <numeric name="prezzo_minimo" null="false" rename_from="prezzo_m" />   <!-- valore numerico con la virgola, non vuoto, rinominato da 'prezzo_m' -->
+
+                <bool name="is_cancellato" null="false" /> <!-- valore vero o falso -->
+
+            </create_or_update_table_fields>
+
+
+        </action>
+
+        <!-- Azione utilizzata per la disinstallazione : name="uninstall" -->
+        <action name="uninstall">
+
+            <!-- sgancia i file dei blocchi installati da questo modulo -->
+            <remove relative_path="blocks/" />
+
+            <!-- elimina una cartella -->
+            <rmdir relative_path="blog/" />
+
+            <!-- rimuove campi da una tabella -->
+            <drop_table_fields table_name="tab_vendite" >
+                <field name="numero_della_vendita" />
+            </drop_table_fields>
+
+            <!-- elimina una tabella -->
+            <drop_table table_name="tab_old_vendite" />
+
+            <drop_table table_name="tab_prova" />
+        </action>
+        
+    </actions>
+
+</module-declaration>

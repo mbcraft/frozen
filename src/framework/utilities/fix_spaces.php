@@ -92,7 +92,7 @@ class FixSpaces
 
 //START WEBSCAN CODE ...
 
-echo "-- FixSpaces 1.0 -- Powered by Frostlab gate<br />";
+echo "-- FixSpaces 1.0 -- Powered by MBCRAFT<br />";
 
 $scanner = new FixSpaces();
 echo "Scanning ... ";

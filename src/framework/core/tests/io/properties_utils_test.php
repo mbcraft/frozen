@@ -149,16 +149,16 @@ class TestPropertiesUtils extends UnitTestCase
             $myString = <<<END_OF_STRING
 [1]
 menu_title = Home
-menu_link = http://www.frostlab.it
+menu_link = http://www.mbcraft.it
 menu_style = small_font
 
 [2 abu jafar]
 menu_title = Credits
-menu_link = http://www.frostlab.it/credits.php
+menu_link = http://www.mbcraft.it/credits.php
 
 [3]
 menu_title = Dove siamo
-menu_link = http://www.frostlab.it/dove_siamo.php
+menu_link = http://www.mbcraft.it/dove_siamo.php
 menu_description = "Raggiungerci è molto semplice, prendete l'autobus AX8!!"
 END_OF_STRING;
             $props = PropertiesUtils::readFromString($myString,true);
@@ -167,7 +167,7 @@ END_OF_STRING;
             $this->assertEqual($props[1]["menu_title"],"Home","La properties non corrisponde!! : ".$props[1]["menu_title"]);
             $this->assertEqual($props["2 abu jafar"]["menu_title"],"Credits","La properties non corrisponde!! : ".$props["2 abu jafar"]["menu_title"]);
 
-            $this->assertEqual($props[3]["menu_link"],"http://www.frostlab.it/dove_siamo.php","La properties non corrisponde!!");
+            $this->assertEqual($props[3]["menu_link"],"http://www.mbcraft.it/dove_siamo.php","La properties non corrisponde!!");
             $this->assertEqual($props[3]["menu_description"],"Raggiungerci è molto semplice, prendete l'autobus AX8!!","La properties non corrisponde!!");
 
         }
@@ -177,7 +177,7 @@ END_OF_STRING;
             $myString = <<<END_OF_STRING
 
 proprieta_01 = Home
-altra_prop = http://www.frostlab.it
+altra_prop = http://www.mbcraft.it
 menu_style = small_font
 
 ancora_props = Ancora proprietà

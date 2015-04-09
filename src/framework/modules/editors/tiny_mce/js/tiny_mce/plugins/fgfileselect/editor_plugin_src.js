@@ -36,10 +36,10 @@
 
 		getInfo : function() {
 			return {
-				longname : 'Frostlab Gate File Selection Plugin',
-				author : 'Frostlab gate',
-				authorurl : 'http://www.frostlab.it',
-				infourl : 'http://www.frostlab.it',
+				longname : 'MBCRAFT File Selection Plugin',
+				author : 'MBCRAFT',
+				authorurl : 'http://www.mbcraft.it',
+				infourl : 'http://www.mbcraft.it',
 				version : "1.0"
 			};
 		}

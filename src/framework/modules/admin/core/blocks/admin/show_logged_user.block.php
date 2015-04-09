@@ -16,9 +16,9 @@ Utente connesso : <b><?=Session::get("/session/username") ?></b><br />
 IP : <b><?= Request::getRemoteIp() ?></b><br />
 <br />
 Contatta<br />
-Frostlab Gate<br />
-info@frostlab.it<br />
-392 0639717<br />
+MBCRAFT<br />
+info@mbcraft.it<br />
+349 3510861<br />
 <br />
 <a href="mailto:info@INSERT-YOUR-MAIL-HERE.it?Subject=Richiesta assistenza per <?=Host::current() ?>">[Richiedi assistenza via mail]</a><br />
 <a href="mailto:info@INSERT-YOUR-MAIL-HERE.it?Subject=Segnalazione bug per <?=Host::current() ?>">[Segnala un bug]</a><br />

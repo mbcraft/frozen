@@ -18,8 +18,7 @@ class Paypal
     private $PROXY_HOST = '127.0.0.1';
     private $PROXY_PORT = '808';
     private $USE_PROXY = false;
-
-
+    private $IMAGE_URL = "";
     
     public function setProxy($proxy_host,$proxy_port)
     {
@@ -50,7 +49,7 @@ class Paypal
     private $API_Password;
     private $API_Signature;
 
-    public function __construct($SandboxFlag, $API_UserName, $API_Password, $API_Signature)
+    public function __construct($SandboxFlag, $API_UserName, $API_Password, $API_Signature, $image_url)
     {
 	    if ($SandboxFlag == true) 
 	    {
@@ -65,6 +64,7 @@ class Paypal
 	$this->API_UserName = $API_UserName;
 	$this->API_Password = $API_Password;
 	$this->API_Signature = $API_Signature;
+        $this->IMAGE_URL = $image_url;
     }
 
     public function CallShortcutExpressCheckoutExt( $paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL,$headerImagePath,$itemName,$NoShipping=true)
@@ -140,7 +140,7 @@ class Paypal
             $nvpstr = $nvpstr . "&CANCELURL=" . urlencode($cancelURL);
             $nvpstr = $nvpstr . "&PAYMENTREQUEST_0_CURRENCYCODE=" . $currencyCodeType;
             $nvpstr = $nvpstr . "&LOCALECODE=IT";
-            $nvpstr = $nvpstr . "&HDRIMG=".urlencode('http://eShopManager.frostlab.it/immagini/header.jpg');   //TODO parametrizzare
+            $nvpstr = $nvpstr . "&HDRIMG=".urlencode($this->IMAGE_URL);  
             $nvpstr = $nvpstr . "&LANDINGPAGE=BILLING";
             $nvpstr = $nvpstr . "&EMAIL=".urlencode($_SESSION['user']['email']);
             $nvpstr = $nvpstr . "&TOTALTYPE=TOTAL";                

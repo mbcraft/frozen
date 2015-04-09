@@ -64,7 +64,7 @@ class EMail
     {
         // costruiamo alcune intestazioni generali
         $headers = "From: ".$this->from."\n";
-        $headers .= "X-Mailer: Frostlab Gate Mail Bot\n";
+        $headers .= "X-Mailer: MBCRAFT Mail Bot\n";
 
         // costruiamo le intestazioni specifiche per il formato HTML
         $headers .= "MIME-Version: 1.0\n";

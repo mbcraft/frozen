@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="2" rev="0">
+    <description>Modulo che abilita la gestione dei contenuti html.</description>
+    <version-history>
+        <version major="1" minor="2" rev="0">
+            Gestione dei pannelli di sinistra tramite utilizzo di plugin.
+        </version>
+        <version major="1" minor="1" rev="1">
+            Modulo che consente di avere il pannello di amministrazione nei siti.
+        </version>
+    </version-history>
+
+    <required-modules>
+        <module name="contenuti/core"/>
+    </required-modules>
+
+    <customization-files>
+        <customization-file path="include/messages/admin/admin_sessione_scaduta.php.inc" required="true"/>
+        <customization-file path="include/messages/admin/admin_welcome.php.inc" required="true"/>
+        <customization-file path="include/messages/admin/admin_welcome_logged.php.inc" required="true"/>
+        <customization-file path="immagini/grafica/admin/logo_azienda.png" required="true"/>
+    </customization-files>
+
+    <available-blocks>
+        <block name="contenuti/immagini/elenco_immagini">
+            <description>Blocco che visualizza l'elenco delle immagini</description>
+            <param name="elenco_immagini" type="array" required="true">Elenco delle immagini da visualizzare.</param>
+        </block>
+        <block name="contenuti/immagini/form_modifica_immagini">
+            <description>Form per la modifica delle immagini</description>
+            <param name="id" type="id" required="true">Elenco delle immagini da visualizzare.</param>
+            <param name="nome" type="string" required="true">Nome dell'immagine.</param>
+            <param name="descrizione" type="string" required="true">Descrizione dell'immagine.</param>
+            <param name="keywords" type="string" required="true">Keywords associate all'immagine.</param>
+        </block>
+        <block name="contenuti/immagini/link_nuova_immagine">
+            <description>Link alla pagina per aggiungere una nuova immagine.</description>
+        </block>
+        <block name="contenuti/immagini/nessuna_immagine">
+            <description>Testo visualizzato in caso non vi siano immagini da visualizzare.</description>
+        </block>
+        <block name="contenuti/immagini/riga_immagine">
+            <description>Blocco che visualizza la singola immagine nell'elenco con action associate.</description>
+            <param name="id" type="id" required="true">Id dell'immagine</param>
+            <param name="nome" type="string" required="true">Nome dell'immagine</param>
+            <param name="save_folder" type="string" required="true">Cartella di salvataggio</param>
+            <param name="hash_name" type="string" required="true">Nome hash dell'immagine</param>
+        </block>
+
+        <block name="contenuti/testi/elenco_testi">
+            <description>Blocco che visualizza l'elenco dei testi modificabili.</description>
+        </block>
+        <block name="contenuti/testi/form_modifica_testi">
+            <description>Blocco che visualizza la form di modifica del testo.</description>
+            <param name="form_name" type="string" required="true">Nome della form di modifica dei testi</param>
+            <param name="action" type="url" required="true">Url dell'azione da utilizzare per la modifica</param>
+            <param name="testo" type="array" required="true">Array contenente i dati dell'entità</param>
+            <param name="submit_button_text" type="string" required="true">Testo del bottone di modifica</param>
+
+        </block>
+        <block name="contenuti/testi/nessun_testo">
+            <description>Blocco utilizzato in caso di nessuna entry.</description>
+        </block>
+        <block name="contenuti/testi/riga_testo">
+            <description>Blocco che visualizza il singolo testo e relativi comandi.</description>
+            <param name="id" type="id" required="true">Id del testo</param>
+            <param name="chiave" type="string" required="true">Chiave del testo</param>
+            <param name="titolo" type="string" required="true">Titolo del testo</param>
+            <param name="codice_lingua" type="string" required="true">Codice lingua del testo</param>
+        </block>
+
+        <block name="file_manager/carica_immagine">
+            <description>Form per il caricamento delle immagini</description>
+        </block>
+
+        <block name="file_manager/form_modifica_immagini">
+            <description>Form di modifica delle immagini</description>
+            <param name="id" type="id" required="true">Id dell'immagine da modificare</param>
+            <param name="nome" type="string" required="true">Nome dell'immagine da modificare</param>
+            <param name="current_folder" type="string" required="true">Cartella dell'immagine da modificare</param>
+        </block>
+
+    </available-blocks>
+    <actions>
+         <action name="install">
+            <add relative_path="contenuti/"/>
+            <add relative_path="include/"/>
+            <add relative_path="blocks/"/>
+            <add relative_path="lib/"/>
+
+            <create_or_update_table_fields table_name="tab_testi">
+                <autoincrement_id name="id"/>
+                <unsigned_int_8 name="tipo" null="false"/>
+                <text_128 name="titolo" null="false"/>
+                <text_65k name="testo" null="false"/>
+                <text_16 name="codice_lingua" null="false"/>
+                <text_64 name="chiave" null="false"/>
+                <text_64 name="keywords" null="true"/>
+            </create_or_update_table_fields>
+
+            <create_or_update_table_fields table_name="tab_immagini">
+                <autoincrement_id name="id"/>
+                <text_512 name="save_folder" null="false"/>
+                <text_512 name="hash_name" null="false"/>
+                <text_128 name="real_name" null="false"/>
+                <text_128 name="nome" null="false"/>
+                <text_512 name="descrizione" null="true"/>
+                <text_512 name="keywords" null="true"/>
+            </create_or_update_table_fields>
+
+            <create_or_update_table_fields table_name="tab_documenti">
+                <autoincrement_id name="id"/>
+                <text_512 name="save_folder" null="false"/>
+                <text_128 name="hash_name" null="false"/>
+                <text_512 name="real_name" null="false"/>
+                <text_128 name="nome" null="false"/>
+                <text_512 name="descrizione" null="true"/>
+                <text_32 name="codice_lingua" null="true"/>
+                <text_512 name="keywords" null="true"/>
+                <text_64 name="chiave" null="false"/>
+            </create_or_update_table_fields>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="contenuti/"/>
+            <remove relative_path="include/"/>
+            <remove relative_path="blocks/"/>
+            <remove relative_path="lib/"/>
+
+            <drop_table table_name="tab_documenti"/>
+            <drop_table table_name="tab_immagini"/>
+            <drop_table table_name="tab_testi"/>
+
+        </action>   
+    </actions>
+
+</module-declaration>

@@ -41,7 +41,7 @@ class RotatorController extends AbstractController
             Upload::saveTo("my_file",self::ROTATOR_GALLERIES_ROOT_PATH.$rotator_name.DS);
         else
         {
-            Flash::error("Errore durante il caricamento dell'immagine!! Contattare l'assistenza : marco.bagnaresi@frostlab.it");
+            Flash::error("Errore durante il caricamento dell'immagine!! Contattare l'assistenza : info@mbcraft.it");
             return Redirect::failure();
         }
         Flash::ok("Immagine caricata con successo!!");

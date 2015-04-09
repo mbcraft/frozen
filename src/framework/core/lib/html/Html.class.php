@@ -21,7 +21,7 @@ class Html implements InitializeAfterLoad
         PageData::instance()->set("/page/headers/comment_tags/list",array());
 
         $year = date("Y");
-        $copyright_string = "Copyright ".$year." (c) Frostlab Gate s.n.c.";
+        $copyright_string = "Copyright ".$year." (c) MBCRAFT";
         PageData::instance()->set("/page/headers/page_copyright",array(Block::MARKER_KEY => "head/copyright","copyright_string" => $copyright_string,"year" => $year));
 
         self::set_layout("ajax");

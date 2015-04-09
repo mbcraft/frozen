@@ -13,7 +13,7 @@
             </tr>
         </table>
         <center>
-            <a href="http://www.frostlab.it" target="_blank" style="font-size:small;">Powered by Frostlab gate s.n.c.</a>
+            <a href="http://www.mbcraft.it" target="_blank" style="font-size:small;">Powered by MBCRAFT</a>
         </center>
 
     </td> <!-- fine colonna footer -->

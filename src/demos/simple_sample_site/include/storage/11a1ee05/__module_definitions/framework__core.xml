@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="3" minor="3" rev="3">
+    <description>Kernel del framework per la costruzione di siti web</description>
+    <version-history>
+        <version major="3" minor="3" rev="3">
+            Aggiunto login per pannello gestione moduli
+        </version>
+        <version major="3" minor="3" rev="2">
+            Aggiunte supporto alle azioni nei moduli e vari refactoring
+        </version>
+        <version major="3" minor="3" rev="2">
+            Aggiunto rename per file+dir, fix db, fix fgarchive
+        </version>
+        <version major="3" minor="3" rev="1">
+            Aggiunto refactoring request formats + FGArchive
+        </version>
+        <version major="3" minor="3" rev="0">
+            Versione stabile del framework con tutti i test funzionanti.
+        </version>
+    </version-history>
+
+</module-declaration>

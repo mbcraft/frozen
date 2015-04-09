@@ -1,0 +1,1 @@
+<h2>Non sono presenti eventi.</h2>

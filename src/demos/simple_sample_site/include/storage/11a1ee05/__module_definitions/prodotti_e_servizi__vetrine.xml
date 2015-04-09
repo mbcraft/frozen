@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<module-declaration major="1" minor="0" rev="1">
+    <description>Pannello per la gestione per le vetrine</description>
+    <version-history>
+        <version major="1" minor="0" rev="1">
+            Prima parte admin
+        </version>
+        <version major="1" minor="0" rev="0">
+            Versione base.
+        </version>
+    </version-history>
+    <actions>
+        <action name="create_tables">
+            <create_or_update_table_fields table_name="tab_vetrina">
+                <autoincrement_id name="id_vetrina"/>
+                <text_128 name="nome_vetrina" null="false" comment="Nome della vetrina"/>
+                <unique name="nome_vetrina"/>
+                <text_128 name="blocco_vetrina" null="false" comment="Blocco da utilizzare per il rendering della vetrina"/>
+            </create_or_update_table_fields>
+            
+            <create_or_update_table_fields table_name="tab_prodotto_servizio_vetrina">
+                <autoincrement_id name="id_prodotto_servizio_vetrina"/>
+                <external_id name="id_vetrina" refers_to="tab_vetrina"/>
+                <external_id name="id_prodotto_servizio" refers_to="tab_prodotti_servizi"/>
+                <text_128 name="nome_immagine" null="false" comment="L'immagine da utilizzare per la vetrina di questo prodotto"/>
+            </create_or_update_table_fields>
+
+            <create_or_update_do name="Vetrina" location="/lib/prodotti_servizi/vetrine/db" table_name="tab_vetrina"/>
+            <create_or_update_do name="ProdottoServizioVetrina" location="/lib/prodotti_servizi/vetrine/db" table_name="tab_prodotto_servizio_vetrina"/>
+        </action>
+
+        <action name="drop_tables">
+            <drop_table table_name="tab_vetrina"/>
+            <drop_table table_name="tab_prodotto_servizio_vetrina"/>
+
+            <drop_do name="Vetrina" location="/lib/prodotti_servizi/vetrine/db"/>
+            <drop_do name="ProdottoServizioVetrina" location="/lib/prodotti_servizi/vetrine/db"/>
+        </action>
+
+        <action name="install">
+            <add relative_path="blocks/"/>
+            <add relative_path="contenuti/"/>
+            <add relative_path="include/"/>
+            <add relative_path="lib/"/>
+            <add relative_path="js/"/>
+        </action>
+
+        <action name="uninstall">
+            <remove relative_path="blocks/"/>
+            <remove relative_path="contenuti/"/>
+            <remove relative_path="include/"/>
+            <remove relative_path="lib/"/>
+            <remove relative_path="js/"/>
+        </action>
+    </actions>
+
+</module-declaration>

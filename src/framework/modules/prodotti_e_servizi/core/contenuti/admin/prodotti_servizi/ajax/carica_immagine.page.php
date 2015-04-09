@@ -1,0 +1,1 @@
+Seleziona un'immagine da caricare : &nbsp;&nbsp; <input type="file" name="file_<?=Params::get("image_count") ?>" value="" /><br /><br />

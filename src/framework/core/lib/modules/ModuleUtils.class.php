@@ -59,13 +59,13 @@ class ModuleUtils
     {
         $module_file = new File(AvailableModules::get_available_module_path($nome_categoria,$nome_modulo).AvailableModules::MODULE_DEFINITION_FILE);
 
-        $schema_url = "http://www.frostlab.it/schemas/2011/module.rnc";
+        $schema_url = "http://www.mbcraft.it/schemas/2011/module.rnc";
 
         $validator_url = "http://validator.nu?level=error&out=xml&schema=".urlencode($schema_url);
 
         $ch = curl_init($validator_url);
 
-        $headers = array("Content-Type: application/xml","Referer: Frostlab gate - Italy - info@frostlab.it");
+        $headers = array("Content-Type: application/xml","Referer: MBCRAFT - Italy - info@mbcraft.it");
 
         curl_setopt($ch,CURLOPT_HEADER,0);
         curl_setopt($ch,CURLOPT_VERBOSE,0);

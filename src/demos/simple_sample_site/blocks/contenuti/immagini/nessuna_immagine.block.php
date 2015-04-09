@@ -1,0 +1,1 @@
+<div align="center"><h2>Non sono presenti immagini.</h2></div>

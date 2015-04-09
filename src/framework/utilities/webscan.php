@@ -87,7 +87,7 @@ class WebScan
 
 //START WEBSCAN CODE ...
 
-echo "-- WebScan 1.0 -- Powered by Frostlab gate<br />";
+echo "-- WebScan 1.0 -- Powered by MBCRAFT<br />";
 
 $scanner = new WebScan();
 echo "Scanning ... ";

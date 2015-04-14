@@ -134,6 +134,8 @@ Roadmap (ordine sparso) :
 - rinominare alcune cartelle come 'contenuti' e 'immagini' utilizzando nomi inglesi.
 - aggiungere classi di supporto alle immagini e alla grafica
 - effettuare test di vulnerabilità e tappare le falle di sicurezza
+- rinominare la classe che gestisce gli archivi del framework e tutte le occorrenze (fatto - 14/Apr/2015)
+- migliorare la documentazione aggiungendo le traduzioni in italiano (fatto - 14/Apr/2015)
 
 Contatti :
 
@@ -280,6 +282,8 @@ Roadmap (sparse order) :
 - implement data driven method call with Tree and DataHolder objects.
 - rename folders 'contenuti' and 'immagini' to with english names.
 - do security checks and close some security related issues.
+- rename the class of the framework archives and all the occurrencies (done - 14/Apr/2015)
+- improve the documentation adding italian translations (done - 14/Apr/2015)
 
 Contacts :
 

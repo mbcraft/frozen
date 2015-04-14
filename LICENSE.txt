@@ -5,7 +5,7 @@ A huge thanks to the StackOverflow community.
 http://www.stackoverflow.com
 
 ... and to Michele Rispoli and Stefano Pelloni for contributing with
-their advices. 
+their work and advices. 
 
 Some modules contains third party software. They have their own licenses.
 

@@ -1,4 +1,4 @@
-[ITALIANO] ************************************************************************
+# ITALIANO
 
 Questa cartella contiene i file di configurazione relativi al dominio. Essi sono eseguiti
 prima dell'esecuzione del routing.
@@ -9,7 +9,7 @@ Questo è utile quando ci sono vari ambienti di esecuzione (locale e remoto) e n
 Per esempio è possibile creare la cartella col nome "www.miosito.com" e i file al suo interno sono eseguiti solo
 se il nome host è "www.miosito.com" (solo il nome host viene considerato).
 
-[ENGLISH] ************************************************************************
+# ENGLISH
 
 This folder contains domain related config files. They are executed before routing is executed.
 The "__common" folder is a special one : config files inside are executed in every domain,

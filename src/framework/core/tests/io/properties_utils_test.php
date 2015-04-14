@@ -49,7 +49,7 @@ class TestPropertiesUtils extends UnitTestCase
         $this->assertEqual(count($props),3,"Il numero delle sezioni non corrisponde!! : ".count($props));
         
         $this->assertEqual($props[1]["menu_title"],"Home");
-        $this->assertEqual($props[2]["menu_link"],"http://www.frostlab.it/credits.php");
+        $this->assertEqual($props[2]["menu_link"],"http://www.mbcraft.it/credits.php");
         $this->assertEqual($props[3]["menu_title"],"Dove siamo");
         $this->assertEqual($props[3]["menu_description"],"Raggiungerci è molto semplice, prendete l'autobus AX8!!");
 

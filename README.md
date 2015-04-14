@@ -11,13 +11,14 @@ Le sistemerò quando avrò tempo per farlo.
 
 Requisiti :
 
-Stack LAMP.
-PHP > 5.2.10
-zlib è richiesta per la compressione/decompressione degli archivi ffa.
-zip è richiesta dalla classe ZipArchive.
-gd è richiesta per il ridimensionamento delle immagini.
-mcrypt è utilizzata per vari digest.
-session è richiesta per l'utilizzo delle sessioni.
+- Stack LAMP.
+- PHP > 5.2.10
+- zlib è richiesta per la compressione/decompressione degli archivi ffa.
+- zip è richiesta dalla classe ZipArchive.
+- gd è richiesta per il ridimensionamento delle immagini.
+- mcrypt è utilizzata per vari digest.
+- session è richiesta per l'utilizzo delle sessioni.
+
 
 Funzionalità :
 
@@ -159,13 +160,13 @@ I'll fix it if i have time for.
 
 Requirements :
 
-LAMP stack.
-PHP > 5.2.10
-zlib is required for compressing/uncompressing ffa archives.
-zip is required for ZipArchive class.
-gd is required for image resizing.
-mcrypt is required for message digests.
-session is required for sessions.
+- LAMP stack.
+- PHP > 5.2.10
+- zlib is required for compressing/uncompressing ffa archives.
+- zip is required for ZipArchive class.
+- gd is required for image resizing.
+- mcrypt is required for message digests.
+- session is required for sessions.
 
 apache must have mod_rewrite enabled.
 

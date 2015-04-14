@@ -13,7 +13,7 @@ Requisiti :
 
 Stack LAMP.
 PHP > 5.2.10
-zlib è richiesta per la compressione/decompressione degli archivi fga.
+zlib è richiesta per la compressione/decompressione degli archivi ffa.
 zip è richiesta dalla classe ZipArchive.
 gd è richiesta per il ridimensionamento delle immagini.
 mcrypt è utilizzata per vari digest.
@@ -161,7 +161,7 @@ Requirements :
 
 LAMP stack.
 PHP > 5.2.10
-zlib is required for compressing/uncompressing fga archives.
+zlib is required for compressing/uncompressing ffa archives.
 zip is required for ZipArchive class.
 gd is required for image resizing.
 mcrypt is required for message digests.

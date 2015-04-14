@@ -283,7 +283,7 @@ Some sample modules are also provider.
 
 * web : [MBCRAFT](http://www.mbcraft.it)
 
-*mail : info [ at ] mbcraft [ dot ] it
+* mail : info [ at ] mbcraft [ dot ] it
 
 
 

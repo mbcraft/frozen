@@ -1,7 +1,0 @@
-- Rimuovere tutte le occorrenze di 'adamassi' dal sito dimostrativo 'simple_sample_site'.
-- Modificare tutte le immagini dei prodotti e le descrizioni con immagini prese da internet riguardanti pianeti o fiori.
-- Eliminare tutte le entry non utili dal database
-- Aggiornare il dump del database coi nuovi dati
-- Check finale
-- Commit sul repository
-- Pubblicazione online

@@ -2,7 +2,7 @@
 
 ## 'Frozen' php framework - precedentemente conosciuto come 'Charme-Crabs' 
 
-Versione corrente : 3.3.4
+### Versione corrente : _3.3.4_
 
 #### Attenzione :
 
@@ -33,7 +33,6 @@ dell'include_path includendo la root del progetto.
   * .config.php
   * .class.php
   * .interface.php
-
 Alcuni di essi sono cercati solo in specifiche cartelle.
 
 * configurazione per host : la configurazione si basa sul nome dell'host ed è salvata all'interno
@@ -60,17 +59,14 @@ che sono automaticamente collegati a degli eventi ed essi saranno invocati quand
 Sono presenti alcuni helper che aiutano nella formattazione dell'output per le estensioni più comuni.
 
 * viste : il framework ha un supporto per le viste basato su layout+sezioni+blocchi.
-
 Praticamente ogni layout è un template, con all'interno alcune sezioni che variano da pagina a pagina. Un blocco è un pezzo di html, 
 ma potrebbe essere anche un pezzo di php. Le sezioni sono specificate con dei segnaposto all'interno dei layout e poi definite all'interno
 delle pagine utilizzando le funzioni 'start_section' e 'end_section'. Esse sono un po' come delle variabili all'interno dei layout renderizzate in un punto ben preciso.
 
 * supporto ai moduli : il framework supporta la presenza di moduli in modo molto simile a quello di composer. In pratica un modulo
 è un insieme di file che possono essere agganciati/sganciati (installati e disinstallati) dalla root del progetto. La differenza principale rispetto a Composer è che in composer i file vengono copiati nella cartella '/vendor', mentre in Frozen, i file sono installati/disinstallati direttamente nella root. Il comportamento adottato in fase di installazione/disinstallazione è definito nel file 'module.xml' obbligatoriamente presente all'interno del modulo.
-
 Il framework inoltre definisce un formato da utilizzare per specificare i moduli. La sintassi dei file xml è validabile in
 base al file '/framework/modules/module.rnc'.
-
 Inoltre un formato xml per gli aggiornamenti al database era in fase di sviluppo. La specifica è presente nel file
 '/framework/modules/data-updates.rnc'.
 
@@ -106,12 +102,10 @@ Si possono abilitare seguendo queste istruzioni :
 Creare un file .config.php in una directory col nome dell'host virtuale nella cartella 'include/config/',
 per esempio è possibile chiamarlo db_tests.config.php, e definire alcune configurazioni al suo interno :
 
-`
-Config::instance()->TEST_DB_NAME = 'test_db_name'; //put your own
+`Config::instance()->TEST_DB_NAME = 'test_db_name'; //put your own
 Config::instance()->TEST_DB_HOST = 'test_db_hostname'; //put your own
 Config::instance()->TEST_DB_USERNAME = 'test_db_username'; //put your own
-Config::instance()->TEST_DB_PASSWORD = 'test_db_password'; //put your own
-`
+Config::instance()->TEST_DB_PASSWORD = 'test_db_password'; //put your own`
 
 Il database deve esistere prima di lanciare i test.
 
@@ -147,13 +141,14 @@ del database necessario a farla funzionare. È un sito web che utilizza alcuni m
 * mail : info [ at ] mbcraft [ dot ] it
 
 
-*Marco Bagnaresi*
+
+*- Marco Bagnaresi*
 
 # ENGLISH
 
 ## 'Frozen' php framework - previously known as 'Charme-Crabs' 
 
-Current version : 3.3.4
+### Current version : _3.3.4_
 
 #### Warnings : 
 
@@ -186,7 +181,6 @@ in order to identify them:
   * .config.php
   * .class.php
   * .interface.php
-
 Some of them are scanned only in defined folders.
 
 * host based configuration : configuration is based on hostname and placed
@@ -213,7 +207,6 @@ and called when the user points to '/actions/[controller_name]/[action_name].[ex
 with default formatters is included.
 
 * views : this framework has a system based on layouts+blocks+sections.
-
 Basically, a layout is a template with sections that are defined differently on each page.
 A block is a piece of html, but it can also be a piece of php.
 A section is defined using placeholders inside the layout, and specified in pages with the 'start_section' and 'end_section' functions. They are like variables inside layouts rendered in a specific place.
@@ -224,10 +217,8 @@ The main difference from Composer (as far as i know) is that in Composer all fil
 to '/vendor'. In Frozen (previously Charme-Crabs), files and folders are added and removed from/to
 the root project. All modules has a module.xml inside that defines its 
 install/uninstall behaviour.
-
 This framework also defines an xml format for modules. Syntax is validable 
 against '/framework/modules/module.rnc'.
-
 Also, an xml format for database updates was in development.
 See '/framework/modules/data-updates.rnc'.
 
@@ -265,12 +256,10 @@ If you want to enable them you should :
 Create a .config.php file in a directory named as your virtual host in 'include/config/', 
 you can call it eg. db_tests.config.php, and define some configs inside :
 
-`
-Config::instance()->TEST_DB_NAME = 'test_db_name'; //put your own
+`Config::instance()->TEST_DB_NAME = 'test_db_name'; //put your own
 Config::instance()->TEST_DB_HOST = 'test_db_hostname'; //put your own
 Config::instance()->TEST_DB_USERNAME = 'test_db_username'; //put your own
-Config::instance()->TEST_DB_PASSWORD = 'test_db_password'; //put your own
-`
+Config::instance()->TEST_DB_PASSWORD = 'test_db_password'; //put your own`
 
 The db must exist prior test running.
 
@@ -297,4 +286,5 @@ Some sample modules are also provider.
 *mail : info [ at ] mbcraft [ dot ] it
 
 
-*Marco Bagnaresi*
+
+*- Marco Bagnaresi*

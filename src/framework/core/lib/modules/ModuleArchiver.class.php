@@ -27,7 +27,7 @@ class ModuleArchiver
         $archive_dir->touch();
         
         $source_dir = new Dir(ModuleUtils::get_modules_path()."/".$category_name."/".$module_name."/");
-        $target_file = $archive_dir->newFile($category_name."__".$module_name."-".$v.".fga");
+        $target_file = $archive_dir->newFile($category_name."__".$module_name."-".$v.".ffa");
         
         $properties = array();
         $properties["category_name"] = $category_name;
@@ -36,7 +36,7 @@ class ModuleArchiver
         $properties["minor_version"] = $version["minor_version"];
         $properties["revision"] = $version["revision"];
  
-        return FGArchive::compress($target_file, $source_dir,$properties);
+        return FFArchive::compress($target_file, $source_dir,$properties);
     }
     
     static function get_available_module_archives()
@@ -62,11 +62,11 @@ class ModuleArchiver
        
         $module_archive = $modules_archive_dir->newFile($filename);
 
-        $properties = FGArchive::getArchiveProperties($module_archive);
+        $properties = FFArchive::getArchiveProperties($module_archive);
         
         $module_dir = new Dir(ModuleUtils::get_modules_path()."/".$properties["category_name"]."/".$properties["module_name"]);
         
-        return FGArchive::extract($module_archive, $module_dir);
+        return FFArchive::extract($module_archive, $module_dir);
     }
     
     static function download_from_repository($key,$module_name)

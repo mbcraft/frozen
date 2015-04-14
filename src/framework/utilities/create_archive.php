@@ -4,7 +4,7 @@ require_once("../init.php");
 
 if (isset($_POST["compress"]))
 {
-    FGArchive::compress(new File($_POST["target_file"]),new Dir($_POST["root_dir"]),$_POST["description"],$_POST["properties"]);
+    FFArchive::compress(new File($_POST["target_file"]),new Dir($_POST["root_dir"]),$_POST["description"],$_POST["properties"]);
     $result = "Archive created.";
 }
 else
@@ -14,7 +14,7 @@ else
 ?>
 <html>
     <head>
-        <title>Create a Frostlab gate archive (FGA)</title>
+        <title>Create a Frozen Framework Archive (FFA)</title>
     </head>
     <body>
         <?
@@ -26,7 +26,7 @@ else
             Properties : <br />
             <textarea name="properties" rows="7" cols="30"></textarea><br />
             Root dir : <input type="text" name="root_dir" value="/" /><br />
-            Target file : <input type="text" name="target_file" value="/package.fga" /><br />
+            Target file : <input type="text" name="target_file" value="/package.ffa" /><br />
             <br />
             <button type="submit">
                 <div>

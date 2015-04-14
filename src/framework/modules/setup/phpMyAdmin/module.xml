@@ -9,7 +9,7 @@
     <actions>
         <action name="install">
             <mkdir relative_path="setup/" />
-            <extract relative_archive_path="files/phpMyAdmin_3_3_10__packaged.fga" extract_to="setup/" />
+            <extract relative_archive_path="files/phpMyAdmin_3_3_10__packaged.ffa" extract_to="setup/" />
         </action>
 
         <action name="uninstall">

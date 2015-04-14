@@ -370,7 +370,7 @@ class ModulePlug implements InitializeAfterLoad
     }
 
     /*
-     * Estrare un archivio fga nella rispettiva cartella
+     * Estrare un archivio ffa nella rispettiva cartella
      * */
     function extract($archive_file_path,$to_folder)
     {
@@ -385,7 +385,7 @@ class ModulePlug implements InitializeAfterLoad
         
         $real_folder = new Dir(self::$root_dir.DS.$to_folder);
         
-        FGArchive::extract($real_archive_file_path, $real_folder);
+        FFArchive::extract($real_archive_file_path, $real_folder);
     }
 
     /*

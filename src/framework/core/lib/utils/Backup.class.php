@@ -40,14 +40,14 @@ class Backup
 
         $file = new File(self::getDirBackupFile($d));
 
-        FGArchive::compress($file,$d,array("type"=>"dir_backup","description"=>"Backup of dir ".$d->getPath()));
+        FFArchive::compress($file,$d,array("type"=>"dir_backup","description"=>"Backup of dir ".$d->getPath()));
 
         return $file->getPath();
     }
 
     public static function is_backup_file($f)
     {
-        $properties = FGArchive::getArchiveProperties($f);
+        $properties = FFArchive::getArchiveProperties($f);
 
         if (isset($properties["type"]) && $properties["type"]==self::DIR_BACKUP_TYPE)
             return true;
@@ -68,7 +68,7 @@ class Backup
 
         $file = new File(self::getDirBackupFile($d));
 
-        FGArchive::extract($file,$dir);
+        FFArchive::extract($file,$dir);
 
         return $file->getPath();
     }
@@ -92,7 +92,7 @@ class Backup
 
     private static function getDirBackupFile($dir)
     {
-        return new File(self::$current_backup_dir.md5($dir->getPath()).".fga");
+        return new File(self::$current_backup_dir.md5($dir->getPath()).".ffa");
     }
 
     public static function backup_table($table_name)

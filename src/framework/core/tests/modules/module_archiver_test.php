@@ -4,7 +4,7 @@ class TestModuleArchiver extends UnitTestCase
 {
     function testSaveAsArchive()
     {
-        $result_file = new File(ModuleArchiver::MODULES_ARCHIVE_DIR."test__category-1_2_3.fga");
+        $result_file = new File(ModuleArchiver::MODULES_ARCHIVE_DIR."test__category-1_2_3.ffa");
         
         $this->assertFalse($result_file->exists(),"Il file del modulo non e' stato creato!!");
         
@@ -25,7 +25,7 @@ class TestModuleArchiver extends UnitTestCase
     
     function testExtractFromArchive()
     {
-        $result_file = new File(ModuleArchiver::MODULES_ARCHIVE_DIR."test__category-1_2_3.fga");
+        $result_file = new File(ModuleArchiver::MODULES_ARCHIVE_DIR."test__category-1_2_3.ffa");
         
         $this->assertFalse($result_file->exists(),"Il file del modulo non e' stato creato!!");
         
@@ -36,7 +36,7 @@ class TestModuleArchiver extends UnitTestCase
         
         ModuleUtils::set_modules_path("/".FRAMEWORK_CORE_PATH."tests/modules/fakeroot2/modules_out/");
         
-        ModuleArchiver::extract_from_archive("test__category-1_2_3.fga");
+        ModuleArchiver::extract_from_archive("test__category-1_2_3.ffa");
         
         $extracted_module_dir = new Dir("/".FRAMEWORK_CORE_PATH."tests/modules/fakeroot2/modules_out/test/category/");
         $this->assertTrue($extracted_module_dir->exists(),"La cartella del modulo non e' stata creata!!");
@@ -52,13 +52,13 @@ class TestModuleArchiver extends UnitTestCase
     function testGetAvailableArchives()
     {
         $d = new Dir(ModuleArchiver::MODULES_ARCHIVE_DIR);
-        $a1 = $d->newFile("test__category-1_2_3.fga");
+        $a1 = $d->newFile("test__category-1_2_3.ffa");
         $a1->touch();
         
-        $a2 = $d->newFile("test__product-4_3_1.fga");
+        $a2 = $d->newFile("test__product-4_3_1.ffa");
         $a2->touch();
         
-        $f3 = $d->newFile("element__list-1_0_0.fga");
+        $f3 = $d->newFile("element__list-1_0_0.ffa");
         $f3->touch();
         
         $available_module_archives = ModuleArchiver::get_available_module_archives();

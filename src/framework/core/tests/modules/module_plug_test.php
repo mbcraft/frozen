@@ -138,12 +138,12 @@ class TestModulePlug extends UnitTestCase
     /*
     function testExtract()
     {
-        $f = new File(FRAMEWORK_CORE_PATH."tests/base/fakeroot/modules/ecommerce/products/files/rotator_gallery.fga");
+        $f = new File(FRAMEWORK_CORE_PATH."tests/base/fakeroot/modules/ecommerce/products/files/rotator_gallery.ffa");
         $f->delete();
 
         $props = array("description" => "Rotator gallery");
 
-        FGArchive::compress($f,FRAMEWORK_CORE_PATH."tests/base/fakeroot/modules/ecommerce/products/files/",$props);
+        FFArchive::compress($f,FRAMEWORK_CORE_PATH."tests/base/fakeroot/modules/ecommerce/products/files/",$props);
 
         //dove innesto i moduli
         $module_plug_test_root = new Dir("/".FRAMEWORK_CORE_PATH."tests/modules/module_plug_root/");
@@ -151,7 +151,7 @@ class TestModulePlug extends UnitTestCase
 
         $plug = new ModulePlug(new Dir("/".FRAMEWORK_CORE_PATH."tests/base/fakeroot/modules/ecommerce/products/"));
 
-        $plug->extract("files/rotator_gallery.fga","/");
+        $plug->extract("files/rotator_gallery.ffa","/");
 
         $expanded_rotator_gallery = new Dir("/".FRAMEWORK_CORE_PATH."tests/modules/module_plug_root/rotator_gallery/");
 
@@ -164,7 +164,7 @@ class TestModulePlug extends UnitTestCase
 
         $expanded_rotator_gallery->delete(true);
 
-        $archive_file = new File("/".FRAMEWORK_CORE_PATH."tests/modules/module_plug_root/rotator_gallery.fga");
+        $archive_file = new File("/".FRAMEWORK_CORE_PATH."tests/modules/module_plug_root/rotator_gallery.ffa");
         $this->assertFalse($archive_file->exists(),"Il file con l'archivio e' rimasto nella cartella in cui e' stato decompresso!!");
 
         $this->assertFalse($expanded_rotator_gallery->exists(),"La directory non e' stata eliminata!!");

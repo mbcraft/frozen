@@ -13,7 +13,7 @@ require_once("io/Dir.class.php");
 require_once("io/File.class.php");
 require_once("io/FileReader.class.php");
 require_once("io/FileWriter.class.php");
-require_once("utils/FGArchive.class.php");
+require_once("utils/FFArchive.class.php");
 
 
 
@@ -27,7 +27,7 @@ require_once("utils/FGArchive.class.php");
 if (isset($_POST["do"]))
 {
     echo "Archiving ...";
-    FGArchive::compress(new File("/framework/utilities/framework.fga"),new Dir("/framework/core"));
+    FFArchive::compress(new File("/framework/utilities/framework.ffa"),new Dir("/framework/core"));
 }
 else
 {

@@ -241,7 +241,7 @@ class AllTests extends TestSuite
 
         $utils_tests->addFile(TEST_ROOT.'utils/datetime_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/system_test.php');
-        $utils_tests->addFile(TEST_ROOT.'utils/fgarchive_test.php');
+        $utils_tests->addFile(TEST_ROOT.'utils/ffarchive_test.php');
         $utils_tests->addFile(TEST_ROOT.'utils/http_test.php');
         //add to global test suite
         $this->add($utils_tests);

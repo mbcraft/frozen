@@ -14,7 +14,7 @@
             <add relative_path="blocks/" /> <!-- aggancia la cartella 'blocks/' presente nel modulo -->
 
             <mkdir relative_path="blog/" />
-            <extract relative_archive_path="files/blog_setup.fga" extract_to="blog/" />
+            <extract relative_archive_path="files/blog_setup.ffa" extract_to="blog/" />
 
             <insert_row to="tab_utenti">    <!-- aggiunge dei record in una tabella -->
                 <field name="id_utente">1</field>

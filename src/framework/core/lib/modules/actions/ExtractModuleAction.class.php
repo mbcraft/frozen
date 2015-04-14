@@ -2,7 +2,7 @@
 /* This software is released under the BSD license. Full text at project root -> license.txt */
 
 /*
-* Estrare un archivio fga nella rispettiva cartella
+* Estrare un archivio ffa nella rispettiva cartella
 * */
 class ExtractModuleAction extends AbstractModuleAction
 {
@@ -30,7 +30,7 @@ class ExtractModuleAction extends AbstractModuleAction
         
         $real_folder = new Dir(self::$root_dir.DS.$to_folder);
         
-        FGArchive::extract($real_archive_file_path, $real_folder);
+        FFArchive::extract($real_archive_file_path, $real_folder);
     
     }
 }

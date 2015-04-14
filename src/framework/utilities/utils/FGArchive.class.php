@@ -6,7 +6,7 @@
  * FORMATO DEL FILE
  *
  *
- * FGA -> 3 bytes
+ * FFA -> 3 bytes
  * (major_version) -> 2 bytes
  * (minor_version) -> 2 bytes
  * (revision) -> 2 bytes
@@ -19,9 +19,9 @@
  * (size) -> 4 bytes
  * (file_data) -> size bytes
  * */
-class FGArchive
+class FFArchive
 {
-    const FG_ARCHIVE_HEADER = "FGA";
+    const FF_ARCHIVE_HEADER = "FFA";
 
     const CURRENT_MAJOR = 0;
     const CURRENT_MINOR = 1;
@@ -36,7 +36,7 @@ class FGArchive
         $binarydata = $reader->read(3);
         $data = unpack("a3",$binarydata);
 
-        if ($data[1]!==self::FG_ARCHIVE_HEADER) throw new InvalidDataException("Intestazione del file non valida : ".$data[1]);
+        if ($data[1]!==self::FF_ARCHIVE_HEADER) throw new InvalidDataException("Intestazione del file non valida : ".$data[1]);
 
         $binarydata = $reader->read(2+2+2);
         $data = unpack("v3",$binarydata);
@@ -158,7 +158,7 @@ class FGArchive
     static function compress($target_file,$root_dir)
     {
         $writer = $target_file->openWriter();
-        $binarydata = pack("a3",self::FG_ARCHIVE_HEADER);
+        $binarydata = pack("a3",self::FF_ARCHIVE_HEADER);
         $writer->write($binarydata);
         $binarydata = pack("v3",self::CURRENT_MAJOR,self::CURRENT_MINOR,self::CURRENT_REV);
         $writer->write($binarydata);
